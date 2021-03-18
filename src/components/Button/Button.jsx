@@ -16,6 +16,7 @@ const Button = ({
       className={clsx(
         'button',
         size === 'small' && 'button--small',
+        size === 'large' && 'button--large',
         variant === 'filled' && 'button--filled',
         variant === 'outlined' && 'button--outlined',
         className
@@ -29,7 +30,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  size: PropTypes.oneOf(['normal', 'small']),
+  size: PropTypes.oneOf(['normal', 'small', 'large']),
   variant: PropTypes.oneOf(['outlined', 'filled']),
 };
 

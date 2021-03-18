@@ -1,0 +1,61 @@
+$image-y-offset: 82px;
+
+.intro {
+  margin-bottom: $image-y-offset;
+  background-color: var(--primary-color);
+  color: #ffffff;
+
+  &__container {
+    display: flex;
+  }
+
+  &__content {
+    padding: 74px 0;
+    flex: 0 0 50%;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 80px;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 48px;
+  }
+
+  &__button-wrapper {
+    width: fit-content;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tag {
+    margin: 6px 0 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__button {
+    &:not([disabled]) {
+      &:hover {
+        --color: #ffffff;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__image {
+    margin: 0 -80px ($image-y-offset * -1) -80px;
+    display: block;
+    user-select: none;
+  }
+}
