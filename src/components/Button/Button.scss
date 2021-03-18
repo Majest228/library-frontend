@@ -1,10 +1,10 @@
-$duration: 0.15s;
+@import 'sass/variables.scss';
 
 .button {
   padding: 12px 20px;
   border: 2px solid var(--border-color, #000000);
   border-radius: 4px;
-  font-size: 18px;
+  font-size: inherit;
   font-family: inherit;
   background: var(--background, transparent);
   color: var(--color, #000000);
@@ -23,45 +23,49 @@ $duration: 0.15s;
   }
 }
 
-.filled {
-  --border-color: var(--primary-color);
-  --background: var(--primary-color);
+.button--small {
+  padding: 9px 12px;
+}
+
+.button--filled {
+  --border-color: var(--secondary-color);
+  --background: var(--secondary-color);
   --color: #ffffff;
 
   &[disabled] {
-    --border-color: var(--darken-primary-color);
-    --background: var(--darken-primary-color);
+    --border-color: var(--darken-secondary-color);
+    --background: var(--darken-secondary-color);
     --color: #f5f5f5;
   }
 
   &:not([disabled]) {
     &:focus {
-      --border-color: var(--darken-primary-color);
+      --border-color: var(--darken-secondary-color);
     }
 
     &:hover {
       --background: #ffffff;
-      --color: var(--primary-color);
+      --color: var(--secondary-color);
     }
   }
 }
 
-.outlined {
-  --border-color: var(--primary-color);
-  --color: var(--primary-color);
+.button--outlined {
+  --border-color: var(--secondary-color);
+  --color: var(--secondary-color);
 
   &[disabled] {
-    --border-color: var(--darken-primary-color);
-    --color: var(--darken-primary-color);
+    --border-color: var(--darken-secondary-color);
+    --color: var(--darken-secondary-color);
   }
 
   &:not([disabled]) {
     &:focus {
-      --border-color: var(--darken-primary-color);
+      --border-color: var(--darken-secondary-color);
     }
 
     &:hover {
-      --background: var(--primary-color);
+      --background: var(--secondary-color);
       --color: #ffffff;
     }
   }

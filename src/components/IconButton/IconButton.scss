@@ -1,0 +1,18 @@
+.icon-button {
+  padding: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon-button--primary {
+  color: var(--primary-color);
+}
+
+.icon-button--secondary {
+  color: var(--secondary-color);
+}

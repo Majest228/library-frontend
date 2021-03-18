@@ -3,13 +3,22 @@ import PropTypes from 'prop-types'; // ES6
 import clsx from 'clsx';
 import './Button.scss';
 
-const Button = ({ type = 'button', variant = 'filled', children, className, ...props }) => {
+const Button = ({
+  type = 'button',
+  size = 'normal',
+  variant = 'filled',
+  children,
+  className,
+  ...props
+}) => {
   return (
     <button
       className={clsx(
         'button',
-        variant === 'filled' && 'filled',
-        variant === 'outlined' && 'outlined'
+        size === 'small' && 'button--small',
+        variant === 'filled' && 'button--filled',
+        variant === 'outlined' && 'button--outlined',
+        className
       )}
       type={type}
       {...props}
@@ -20,6 +29,7 @@ const Button = ({ type = 'button', variant = 'filled', children, className, ...p
 };
 
 Button.propTypes = {
+  size: PropTypes.oneOf(['normal', 'small']),
   variant: PropTypes.oneOf(['outlined', 'filled']),
 };
 

@@ -1,14 +1,23 @@
-$color: #f2762e;
+@import 'sass/variables.scss';
 
 :root {
-  --primary-color: #{$color};
-  --lighten-primary-color: #{lighten($color, 10)};
-  --darken-primary-color: #{darken($color, 10)};
+  --primary-color: #{$primary-color};
+  --lighten-primary-color: #{lighten($primary-color, 10)};
+  --darken-primary-color: #{darken($primary-color, 10)};
+  --secondary-color: #{$secondary-color};
+  --lighten-secondary-color: #{lighten($secondary-color, 10)};
+  --darken-secondary-color: #{darken($secondary-color, 10)};
 }
 
 body {
   margin: 0;
+  font-size: 18px;
   font-family: 'Roboto', 'Segoe UI', 'Ubuntu', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
 }
