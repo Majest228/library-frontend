@@ -1,5 +1,5 @@
 {
-  "name": "library",
+  "name": "library-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -37,6 +37,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1"
   },
+  "proxy": "http://127.0.0.1:8080/",
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --cache --fix",
     "*.(json|css|md)": "prettier --write"
