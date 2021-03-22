@@ -7,9 +7,9 @@ import classes from './Star.module.css';
 export const Star = React.forwardRef(({ marked = false, ...props }, forwardedRef) => (
   <button className={classes.star} ref={forwardedRef} {...props}>
     <div className={classes.wrapper}>
-      <StrokedStar className={classes.icon} width={24} height={24} />
+      <StrokedStar className={classes.icon} width={16} height={16} />
       <Grow className={classes.grow} in={marked} duration={100}>
-        <FilledStar className={classes.icon} width={24} height={24} />
+        <FilledStar className={classes.icon} width={16} height={16} />
       </Grow>
     </div>
   </button>

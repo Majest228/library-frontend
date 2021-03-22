@@ -2,10 +2,13 @@
   padding: 8px;
   border: none;
   background: transparent;
-  cursor: pointer;
 
   &:focus {
     outline: none;
+  }
+
+  &:not([disabled]) {
+    cursor: pointer;
   }
 }
 

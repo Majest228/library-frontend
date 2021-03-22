@@ -1,0 +1,76 @@
+.category-item {
+  max-width: 190px;
+
+  &__image {
+    width: 190px;
+    height: 254px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+
+    &:not([src]) {
+      animation: blink 2s ease-in-out infinite;
+    }
+  }
+
+  &__content {
+    padding: 10px 10px 0 10px;
+  }
+
+  &__user-score {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__info {
+    color: #4a4a4a;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  &__descrtiption {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &__skeleton {
+    &-rect {
+      width: 100%;
+      height: 1em;
+      border-radius: 4px;
+      display: block;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    &-circle {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      display: block;
+      animation: blink 2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: #9a9a9a;
+  }
+
+  50% {
+    background-color: #b3b3b3;
+  }
+}

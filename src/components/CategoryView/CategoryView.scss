@@ -1,0 +1,71 @@
+.categoty-view {
+  padding: 40px 0;
+  max-width: 1290px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    color: #4a4a4a;
+  }
+
+  &__title {
+    font-size: 32px;
+  }
+
+  &__count {
+    font-size: 24px;
+  }
+
+  &__link {
+    align-self: flex-end;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--secondary-color);
+  }
+
+  &__items {
+    display: flex;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+
+      &-button {
+        width: 110px;
+        background: transparent;
+      }
+
+      &-track {
+        background-image: linear-gradient(to right, #e9e9e9, #e9e9e9),
+          url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 6"%3E%3Ccircle cx="2" cy="3" r="2" fill="%23E9E9E9" /%3E%3C/svg%3E'),
+          url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 6"%3E%3Ccircle cx="2" cy="3" r="2" fill="%23E9E9E9" /%3E%3C/svg%3E');
+        background-size: calc(100% - 4px) 4px, 4px 6px, 4px 6px;
+        background-position: 2px 1px, 0 0, 100% 0;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+      }
+
+      &-thumb {
+        border-radius: 5px;
+        background-color: var(--primary-color);
+      }
+    }
+  }
+
+  &__item {
+    margin: 30px 15px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
