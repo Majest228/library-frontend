@@ -3,7 +3,7 @@ import React from 'react';
 import hero from './hero.svg';
 import './Intro.scss';
 
-const Intro = () => {
+export const Intro = () => {
   return (
     <div className="intro">
       <div className="intro__container container">
@@ -27,5 +27,3 @@ const Intro = () => {
     </div>
   );
 };
-
-export default Intro;

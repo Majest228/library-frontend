@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { TextField } from 'components/TextField';
 import { Button } from 'components/Button';
-import LikeButton from 'components/LikeButton';
+import { LikeButton } from 'components/LikeButton';
 import './Header.scss';
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="header">
       <div className="header__container container">
@@ -20,24 +21,32 @@ const Header = () => {
       <nav className="header__menu">
         <ul className="header__list">
           <li className="header__menu-item">
-            <a className="header__link">жанры</a>
+            <NavLink to="/" className="header__link">
+              жанры
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <a className="header__link">книги</a>
+            <NavLink to="/" className="header__link">
+              книги
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <a className="header__link">авторы</a>
+            <NavLink to="/" className="header__link">
+              авторы
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <a className="header__link">аудиокниги</a>
+            <NavLink to="/" className="header__link">
+              аудиокниги
+            </NavLink>
           </li>
           <li className="header__menu-item">
-            <a className="header__link">издательства</a>
+            <NavLink to="/" className="header__link">
+              издательства
+            </NavLink>
           </li>
         </ul>
       </nav>
     </header>
   );
 };
-
-export default Header;

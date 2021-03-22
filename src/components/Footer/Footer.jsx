@@ -1,9 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Button } from 'components/Button';
 import logo from './footer-logo.svg';
 import './Footer.scss';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container container">
@@ -17,29 +18,29 @@ const Footer = () => {
         <nav className="footer__link">
           <ul className="footer__link-list">
             <li className="footer__link-list-item">
-              <a>О нас</a>
+              <NavLink to="/">О нас</NavLink>
             </li>
             <li className="footer__link-list-item">
-              <a>О проекте</a>
+              <NavLink to="/">О проекте</NavLink>
             </li>
             <li className="footer__link-list-item">
-              <a>Отзывы</a>
+              <NavLink to="/">Отзывы</NavLink>
             </li>
             <li className="footer__link-list-item">
-              <a>Контакты</a>
+              <NavLink to="/">Контакты</NavLink>
             </li>
           </ul>
         </nav>
         <nav className="footer__trend">
           <ul className="footer__trend-list">
             <li className="footer__trend-list-item">
-              <a>Бестселлеры</a>
+              <NavLink to="/">Бестселлеры</NavLink>
             </li>
             <li className="footer__trend-list-item">
-              <a>Популярные авторы</a>
+              <NavLink to="/">Популярные авторы</NavLink>
             </li>
             <li className="footer__trend-list-item">
-              <a>Популярные жанры</a>
+              <NavLink to="/">Популярные жанры</NavLink>
             </li>
           </ul>
         </nav>
@@ -55,5 +56,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

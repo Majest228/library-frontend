@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { IconButton } from 'components/IconButton';
 import { StrokedHeart, FilledHeart } from 'icons';
 
-const LikeButton = ({ liked = false, ...props }) => {
+export const LikeButton = ({ liked = false, ...props }) => {
   const Icon = liked ? FilledHeart : StrokedHeart;
 
   return (
@@ -16,5 +16,3 @@ const LikeButton = ({ liked = false, ...props }) => {
 LikeButton.propTypes = {
   liked: PropTypes.bool,
 };
-
-export default LikeButton;

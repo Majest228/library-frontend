@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'; // ES6
 import clsx from 'clsx';
 import './Button.scss';
 
-const Button = ({
+export const Button = ({
   type = 'button',
   size = 'normal',
   variant = 'filled',
@@ -34,5 +34,3 @@ Button.propTypes = {
   size: PropTypes.oneOf(['normal', 'small', 'medium', 'large']),
   variant: PropTypes.oneOf(['outlined', 'filled']),
 };
-
-export default Button;

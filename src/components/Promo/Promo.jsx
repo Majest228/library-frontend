@@ -3,12 +3,7 @@ import { Subscribe } from 'icons';
 import { Button } from 'components/Button';
 import './Promo.scss';
 
-const Promo = () => {
-  React.useEffect(() => {
-    fetch('/api/')
-      .then(response => response.json())
-      .then(console.log);
-  }, []);
+export const Promo = () => {
   return (
     <div className="promo">
       <Subscribe className="promo__icon" width={32} height={32} />
@@ -19,5 +14,3 @@ const Promo = () => {
     </div>
   );
 };
-
-export default Promo;
