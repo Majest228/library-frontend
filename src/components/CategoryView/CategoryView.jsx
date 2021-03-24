@@ -17,32 +17,30 @@ export const CategoryView = ({ title, moreText, moreLink, renderItemsCount, getI
   }, []);
 
   return (
-    <div className="categoty-view">
-      <div className="categoty-view__header">
-        <div className="categoty-view__info">
-          <div className="categoty-view__title">{title}</div>
+    <div className="category-view">
+      <div className="category-view__header">
+        <div className="category-view__info">
+          <div className="category-view__title">{title}</div>
           {renderItemsCount && (
-            <div className="categoty-view__count">{renderItemsCount(items.total)}</div>
+            <div className="category-view__count">{renderItemsCount(items.total)}</div>
           )}
         </div>
         {moreLink && moreText && (
-          <NavLink className="categoty-view__link" to={moreLink}>
+          <NavLink className="category-view__link" to={moreLink}>
             {moreText}
           </NavLink>
         )}
       </div>
-      <div>
-        <div className="categoty-view__items">
-          {items.total > 0
-            ? items.list.map(book => (
-                <Fade className="categoty-view__item" in key={book.id}>
-                  <CategoryItem data={book} />
-                </Fade>
-              ))
-            : generate(index => index, 6).map(index => (
-                <CategoryItemSkeleton className="categoty-view__item" key={index} />
-              ))}
-        </div>
+      <div className="category-view__items">
+        {items.total > 0
+          ? items.list.map(book => (
+              <Fade className="category-view__item" in key={book.id}>
+                <CategoryItem data={book} />
+              </Fade>
+            ))
+          : generate(index => index, 6).map(index => (
+              <CategoryItemSkeleton className="category-view__item" key={index} />
+            ))}
       </div>
     </div>
   );
