@@ -10,14 +10,17 @@ const App = () => (
   <Router>
     <Promo />
     <Header />
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-      <Route path="/book/:id">
-        <Book />
-      </Route>
-    </Switch>
+    <div className="fullpage">
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/book/:id">
+          <Book />
+        </Route>
+      </Switch>
+    </div>
+
     <Footer />
   </Router>
 );

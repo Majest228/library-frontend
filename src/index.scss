@@ -16,8 +16,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .container {
   max-width: 1290px;
   margin: 0 auto;
+}
+
+.fullpage {
+  flex-grow: 1;
 }
