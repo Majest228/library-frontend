@@ -1,5 +1,5 @@
 import React from 'react';
-import { Intro } from 'components/Intro';
+import { Intro } from 'components/layout/Intro';
 import { CategoryView } from 'components/CategoryView/CategoryView';
 import './Home.scss';
 

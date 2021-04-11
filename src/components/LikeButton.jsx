@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IconButton } from 'components/IconButton';
+import { IconButton } from 'components/common/IconButton';
 import { StrokedHeart, FilledHeart } from 'icons';
 
 export const LikeButton = ({ liked = false, ...props }) => {

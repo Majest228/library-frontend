@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { CategoryItem, CategoryItemSkeleton } from 'components/CategoryItem';
-import { Fade } from 'components/Fade';
+import { Fade } from 'components/animations/Fade';
 import { generate } from 'utils';
 import './CategoryView.scss';
 
@@ -14,7 +14,7 @@ export const CategoryView = ({ title, moreText, moreLink, renderItemsCount, getI
 
   useEffect(() => {
     getItems().then(data => setItems(data));
-  }, []);
+  }, [getItems]);
 
   return (
     <div className="category-view">
