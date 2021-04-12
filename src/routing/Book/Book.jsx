@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BookView } from 'components/BookView';
+import { FallbackMessage } from 'components/common/FallbackMessage';
 import { useRouteMatch } from 'react-router';
 import { getBook } from 'api';
 import './Book.scss';
@@ -22,10 +23,10 @@ export const Book = () => {
         book !== null ? (
           <BookView book={book} />
         ) : (
-          <mark>Загружаем</mark>
+          <FallbackMessage type="loading">Идет загрузка книги</FallbackMessage>
         )
       ) : (
-        <mark>Не удачно</mark>
+        <FallbackMessage type="warning">Такой книги у нас нет</FallbackMessage>
       )}
     </div>
   );

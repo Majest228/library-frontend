@@ -1,0 +1,18 @@
+.fallback-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  margin: 0 auto;
+
+  &__text {
+    max-width: 650px;
+    font-size: 75px;
+  }
+
+  &__image {
+    width: 800px;
+    height: 450px;
+    object-fit: contain;
+  }
+}

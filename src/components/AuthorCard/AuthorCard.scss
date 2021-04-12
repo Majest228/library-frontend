@@ -1,0 +1,100 @@
+.author {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    align-items: center;
+    padding: 10px;
+    transition: 0.8s;
+    color: #4a4a4a;
+
+    &:hover {
+      transition: 0.4s;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+      background: rgb(252, 252, 252);
+    }
+  }
+
+  &__image {
+    width: 270px;
+    height: 220px;
+    object-fit: contain;
+  }
+
+  &__name {
+    padding-top: 5px;
+    font-size: 18px;
+    text-align: center;
+  }
+  &__button {
+    align-self: flex-end;
+  }
+}
+
+.modal {
+  color: #4a4a4a;
+
+  &__title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &__author__name,
+  &__date-of-birth,
+  &__date-of-death {
+    margin-bottom: 10px;
+  }
+  &__author__biography {
+    white-space: pre-wrap;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  &-icon {
+    position: relative;
+    height: 50px;
+    width: 50px;
+  }
+
+  .leftright {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #616161;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in;
+  }
+  .rightleft {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #616161;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in;
+  }
+
+  &:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #000;
+  }
+
+  &:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #000;
+  }
+}
