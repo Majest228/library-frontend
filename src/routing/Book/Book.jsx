@@ -4,6 +4,7 @@ import { FallbackMessage } from 'components/common/FallbackMessage';
 import { useRouteMatch } from 'react-router';
 import { getBook } from 'api';
 import './Book.scss';
+import { Error } from 'components/Error';
 
 export const Book = () => {
   const { params } = useRouteMatch();
@@ -26,7 +27,7 @@ export const Book = () => {
           <FallbackMessage type="loading">Идет загрузка книги</FallbackMessage>
         )
       ) : (
-        <FallbackMessage type="warning">Такой книги у нас нет</FallbackMessage>
+        <Error />
       )}
     </div>
   );

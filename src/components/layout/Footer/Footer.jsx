@@ -18,29 +18,43 @@ export const Footer = () => {
         <nav className="footer__link">
           <ul className="footer__link-list">
             <li className="footer__link-list-item">
-              <NavLink to="/">О нас</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                О нас
+              </NavLink>
             </li>
             <li className="footer__link-list-item">
-              <NavLink to="/">О проекте</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                О проекте
+              </NavLink>
             </li>
             <li className="footer__link-list-item">
-              <NavLink to="/">Отзывы</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                Отзывы
+              </NavLink>
             </li>
             <li className="footer__link-list-item">
-              <NavLink to="/">Контакты</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                Контакты
+              </NavLink>
             </li>
           </ul>
         </nav>
         <nav className="footer__trend">
           <ul className="footer__trend-list">
             <li className="footer__trend-list-item">
-              <NavLink to="/">Бестселлеры</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                Бестселлеры
+              </NavLink>
             </li>
             <li className="footer__trend-list-item">
-              <NavLink to="/">Популярные авторы</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                Популярные авторы
+              </NavLink>
             </li>
             <li className="footer__trend-list-item">
-              <NavLink to="/">Популярные жанры</NavLink>
+              <NavLink className="footer__link-list-item-link" to="/">
+                Популярные жанры
+              </NavLink>
             </li>
           </ul>
         </nav>

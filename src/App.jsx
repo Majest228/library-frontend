@@ -6,6 +6,7 @@ import { Footer } from 'components/layout/Footer';
 import { Home } from 'routing/Home';
 import { Book } from 'routing/Book';
 import { Authors } from 'routing/Authors';
+import { Error } from 'components/Error';
 
 const App = () => (
   <Router>
@@ -23,7 +24,9 @@ const App = () => (
           <Authors />
         </Route>
         <Route path="*">
-          <mark>Такой страницы нет (404)</mark>
+          <div className="container">
+            <Error />
+          </div>
         </Route>
       </Switch>
     </div>
