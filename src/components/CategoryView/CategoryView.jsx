@@ -6,7 +6,15 @@ import { Fade } from 'components/animations/Fade';
 import { generate } from 'utils';
 import './CategoryView.scss';
 
-export const CategoryView = ({ title, moreText, moreLink, renderItemsCount, getItems }) => {
+export const CategoryView = ({
+  title,
+  moreText,
+  moreLink,
+  renderItemsCount,
+  getItems,
+  onNameClick,
+  onDescriptionClick,
+}) => {
   const [items, setItems] = useState({
     total: 0,
     list: [],
@@ -33,9 +41,13 @@ export const CategoryView = ({ title, moreText, moreLink, renderItemsCount, getI
       </div>
       <div className="category-view__items">
         {items.total > 0
-          ? items.list.map(book => (
-              <Fade className="category-view__item" in key={book.id}>
-                <CategoryItem data={book} />
+          ? items.list.map(entry => (
+              <Fade className="category-view__item" in key={entry.id}>
+                <CategoryItem
+                  data={entry}
+                  onNameClick={onNameClick}
+                  onDescriptionClick={onDescriptionClick}
+                />
               </Fade>
             ))
           : generate(index => index, 6).map(index => (

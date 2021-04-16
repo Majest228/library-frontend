@@ -12,6 +12,10 @@ export const Book = () => {
   const [book, setBook] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     getBook(params.id).then(response => {
       setSuccess(response.success);
       setBook(response.data);

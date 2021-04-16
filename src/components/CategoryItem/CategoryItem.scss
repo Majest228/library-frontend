@@ -28,15 +28,39 @@
   &__button {
     width: 32px;
     height: 32px;
+    flex-shrink: 0;
   }
 
   &__info {
     color: #4a4a4a;
   }
 
+  &__invisible-button {
+    padding: 0;
+    border: none;
+    display: block;
+    text-align: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   &__name {
     margin: 0;
     font-size: 16px;
+    word-break: break-word;
+
+    &--inline {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &__descrtiption {

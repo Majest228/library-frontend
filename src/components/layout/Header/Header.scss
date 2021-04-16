@@ -56,6 +56,10 @@
     list-style: none;
   }
 
+  &__title {
+    text-decoration: none;
+  }
+
   &__link {
     padding: 26px;
     text-decoration: none;

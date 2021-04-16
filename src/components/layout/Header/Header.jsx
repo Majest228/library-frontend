@@ -9,7 +9,9 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header__container container">
-        <h1 className="header__logo">WEWEBOOK</h1>
+        <NavLink className="header__title" to="/">
+          <h1 className="header__logo">WEWEBOOK</h1>
+        </NavLink>
         <TextField className="header__search" placeholder="начните поиск" />
         <div className="header__buttons">
           <LikeButton className="header__favorites" liked secondary />
@@ -40,11 +42,11 @@ export const Header = () => {
               аудиокниги
             </NavLink>
           </li>
-          <li className="header__menu-item">
+          {/* <li className="header__menu-item">
             <NavLink to="/" className="header__link">
               издательства
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

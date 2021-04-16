@@ -1,49 +1,82 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import { Intro } from 'components/layout/Intro';
 import { CategoryView } from 'components/CategoryView/CategoryView';
+import { getRandomBooks, getRandomAuthors } from 'api';
 import './Home.scss';
 
-export const Home = () => (
-  <>
-    <Intro />
-    <div className="categories">
-      <CategoryView
-        title="Книги"
-        moreText="Все книги"
-        moreLink="/"
-        renderItemsCount={count => (
-          <>
-            Всего книг в библиотеке <b>{count}</b>
-          </>
-        )}
-        getItems={getItems}
-      />
-      <CategoryView
-        title="Аудиокниги"
-        moreText="Все аудиокниги"
-        moreLink="/"
-        renderItemsCount={count => (
-          <>
-            Всего аудиокниг в библиотеке <b>{count}</b>
-          </>
-        )}
-        getItems={getItems}
-      />
-      <CategoryView
-        title="Авторы"
-        moreText="Все авторы"
-        moreLink="/"
-        renderItemsCount={count => (
-          <>
-            Всего авторов в библиотеке <b>{count}</b>
-          </>
-        )}
-        getItems={getItems}
-      />
-      <CategoryView title="Подборка недели от WeWeBook" getItems={getItems} />
-    </div>
-  </>
-);
+const getBooks = () =>
+  getRandomBooks(10).then(response => ({
+    total: response.data.total,
+    list: response.data.list.map(book => ({
+      id: book.id,
+      image: book.image,
+      name: book.name,
+      description: book.author,
+      rating: book.rating,
+      favorited: false,
+    })),
+  }));
+
+const getAuthors = () =>
+  getRandomAuthors(10).then(response => ({
+    total: response.data.total,
+    list: response.data.list.map(author => ({
+      id: author.id,
+      image: author.image,
+      name: author.fullName,
+      favorited: false,
+    })),
+  }));
+
+export const Home = () => {
+  const history = useHistory();
+
+  const openBook = book => history.push(`/book/${book.id}`);
+
+  return (
+    <>
+      <Intro />
+      <div className="categories">
+        <CategoryView
+          title="Книги"
+          moreText="Все книги"
+          moreLink="/"
+          renderItemsCount={count => (
+            <>
+              Всего книг в библиотеке <b>{count}</b>
+            </>
+          )}
+          getItems={getBooks}
+          onNameClick={openBook}
+        />
+        <CategoryView
+          title="Аудиокниги"
+          moreText="Все аудиокниги"
+          moreLink="/"
+          renderItemsCount={count => (
+            <>
+              Всего аудиокниг в библиотеке <b>{count}</b>
+            </>
+          )}
+          getItems={getItems}
+        />
+        <CategoryView
+          title="Авторы"
+          moreText="Все авторы"
+          moreLink="/authors"
+          renderItemsCount={count => (
+            <>
+              Всего авторов в библиотеке <b>{count}</b>
+            </>
+          )}
+          getItems={getAuthors}
+        />
+        <CategoryView title="Подборка недели от WeWeBook" getItems={getItems} />
+      </div>
+    </>
+  );
+};
 
 const generate = (shape, count, helpers = {}) =>
   Array.from({ length: count }, (_, index) => shape(index, helpers));
