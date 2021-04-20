@@ -60,10 +60,10 @@ export const Footer = () => {
         </nav>
         <div className="footer__buttons">
           <Button className="footer__button" size="medium">
-            получить подписку
+            Получить подписку
           </Button>
           <Button className="footer__button" size="medium">
-            войти
+            Войти
           </Button>
         </div>
       </div>

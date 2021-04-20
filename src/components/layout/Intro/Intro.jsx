@@ -15,7 +15,7 @@ export const Intro = () => {
           </p>
           <div className="intro__button-wrapper">
             <Button className="intro__button" size="large">
-              оформить подписку
+              Оформить подписку
             </Button>
             <p className="intro__tag">#wewebookвсегдатут</p>
           </div>

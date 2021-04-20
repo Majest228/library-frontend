@@ -30,7 +30,7 @@ export const Genres = () => {
     <ShadowWrapper className="genres-page container">
       <TextField
         className="genres__search"
-        placeholder="начните поиск"
+        placeholder="Начните поиск"
         value={search}
         onChange={searchChange}
       />

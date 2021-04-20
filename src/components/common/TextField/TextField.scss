@@ -8,6 +8,10 @@
   font-family: inherit;
   transition: border-color $duration ease-in-out;
 
+  &--medium {
+    padding: 7px 15px;
+  }
+
   &::placeholder {
     color: $inactive-color;
   }

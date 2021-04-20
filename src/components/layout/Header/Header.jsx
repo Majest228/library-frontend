@@ -12,11 +12,11 @@ export const Header = () => {
         <NavLink className="header__title" to="/">
           <h1 className="header__logo">WEWEBOOK</h1>
         </NavLink>
-        <TextField className="header__search" placeholder="начните поиск" />
+        <TextField className="header__search" placeholder="Начните поиск" />
         <div className="header__buttons">
           <LikeButton className="header__favorites" liked secondary />
-          <Button>получить подписку</Button>
-          <Button variant="outlined">войти</Button>
+          <Button>Получить подписку</Button>
+          <Button variant="outlined">Войти</Button>
         </div>
       </div>
       <hr className="header__divider" />
@@ -24,22 +24,22 @@ export const Header = () => {
         <ul className="header__list">
           <li className="header__menu-item">
             <NavLink to="/genres" className="header__link">
-              жанры
+              Жанры
             </NavLink>
           </li>
           <li className="header__menu-item">
-            <NavLink to="/" className="header__link">
-              книги
+            <NavLink to="/books" className="header__link">
+              Книги
             </NavLink>
           </li>
           <li className="header__menu-item">
             <NavLink to="/authors" className="header__link">
-              авторы
+              Авторы
             </NavLink>
           </li>
           <li className="header__menu-item">
             <NavLink to="/" className="header__link">
-              аудиокниги
+              Аудиокниги
             </NavLink>
           </li>
         </ul>

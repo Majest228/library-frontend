@@ -30,7 +30,7 @@ export const Authors = () => {
     <ShadowWrapper className="author-page container">
       <TextField
         className="author__search"
-        placeholder="начните поиск"
+        placeholder="Начните поиск"
         value={search}
         onChange={searchChange}
       />

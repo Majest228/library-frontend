@@ -9,7 +9,7 @@ export const Promo = () => {
       <Subscribe className="promo__icon" width={32} height={32} />
       <p className="promo__text">Порадуйте друзей подарочной подпиской</p>
       <Button className="promo__btn" size="small" variant="outlined">
-        подарить подписку
+        Подарить подписку
       </Button>
     </div>
   );

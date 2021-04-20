@@ -7,6 +7,7 @@ import { Home } from 'routing/Home';
 import { Book } from 'routing/Book';
 import { Authors } from 'routing/Authors';
 import { Genres } from 'routing/Genres';
+import { Books } from 'routing/Books';
 import { Error } from 'components/Error';
 
 const App = () => (
@@ -26,6 +27,9 @@ const App = () => (
         </Route>
         <Route path="/genres">
           <Genres />
+        </Route>
+        <Route path="/books">
+          <Books />
         </Route>
         <Route path="*">
           <div className="container">

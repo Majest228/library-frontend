@@ -15,6 +15,7 @@
     "@fontsource/roboto": "^4.2.2",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "formik": "^2.2.6",
     "localforage": "^1.9.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",

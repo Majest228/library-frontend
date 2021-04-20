@@ -1,0 +1,16 @@
+.all-books {
+  margin-bottom: 50px;
+  &__wrapper {
+    background-color: var(--primary-color);
+    min-height: 280px;
+  }
+
+  &__title {
+    font-size: 288px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 86px;
+    margin: 0;
+  }
+}
