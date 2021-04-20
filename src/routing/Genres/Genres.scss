@@ -1,0 +1,15 @@
+.genres-page {
+  padding: 100px 70px 70px 70px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.genres__search {
+  position: absolute;
+  min-width: 400px;
+  top: 30px;
+}

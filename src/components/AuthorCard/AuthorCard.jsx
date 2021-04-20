@@ -6,7 +6,7 @@ import './AuthorCard.scss';
 export const AuthorCard = ({ author }) => {
   const [open, setOpen] = useState(false);
 
-  const handleCLose = () => setOpen(false);
+  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -19,8 +19,8 @@ export const AuthorCard = ({ author }) => {
           </Button>
         </div>
       </div>
-      <Modal className="modal" open={open} onClose={handleCLose}>
-        <button className="close" onClick={handleCLose}>
+      <Modal className="modal" open={open} onClose={handleClose}>
+        <button className="close" onClick={handleClose}>
           <div className="close-icon">
             <div className="leftright"></div>
             <div className="rightleft"></div>

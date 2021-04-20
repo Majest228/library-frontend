@@ -1,0 +1,28 @@
+.genre-item {
+  display: flex;
+  align-items: center;
+  margin: 8px 12px;
+  color: #4a4a4a;
+  cursor: pointer;
+
+  &:hover &__icon {
+    color: var(--secondary-color);
+    transition: all 0.3s ease-in;
+  }
+  &:hover &__name {
+    box-shadow: 0 2px 0 0 var(--secondary-color);
+    transition: all 0.3s ease-in;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    padding-right: 5px;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s ease-in;
+  }
+
+  &____name {
+    font-size: 20px;
+  }
+}

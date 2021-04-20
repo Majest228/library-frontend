@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { TextField } from 'components/common/TextField';
 import { ShadowWrapper } from 'components/ShadowWrapper';
-import { AuthorCard } from 'components/AuthorCard';
+import { GenreItem } from 'components/GenreItem';
 import { has } from 'utils';
-import { getAuthors } from 'api';
-import './Authors.scss';
+import { getGenres } from 'api';
+import './Genres.scss';
 
-export const Authors = () => {
-  const [authors, setAuthors] = useState([]);
+export const Genres = () => {
+  const [genres, setGenres] = useState([]);
   const [search, setSearch] = useState('');
 
-  const filteredAuthors = authors.filter(author => has(author.fullName, search));
+  const filteredGenres = genres.filter(genre => has(genre.name, search));
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    getAuthors().then(response => {
-      setAuthors(response.data || []);
+    getGenres().then(response => {
+      setGenres(response.data || []);
     });
   }, []);
 
@@ -27,15 +27,15 @@ export const Authors = () => {
   };
 
   return (
-    <ShadowWrapper className="author-page container">
+    <ShadowWrapper className="genres-page container">
       <TextField
-        className="author__search"
+        className="genres__search"
         placeholder="начните поиск"
         value={search}
         onChange={searchChange}
       />
-      {filteredAuthors.map(author => (
-        <AuthorCard author={author} key={author.id} />
+      {filteredGenres.map(genre => (
+        <GenreItem genre={genre} key={genre.id} />
       ))}
     </ShadowWrapper>
   );

@@ -23,7 +23,7 @@ export const Header = () => {
       <nav className="header__menu">
         <ul className="header__list">
           <li className="header__menu-item">
-            <NavLink to="/" className="header__link">
+            <NavLink to="/genres" className="header__link">
               жанры
             </NavLink>
           </li>
@@ -42,11 +42,6 @@ export const Header = () => {
               аудиокниги
             </NavLink>
           </li>
-          {/* <li className="header__menu-item">
-            <NavLink to="/" className="header__link">
-              издательства
-            </NavLink>
-          </li> */}
         </ul>
       </nav>
     </header>
