@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterWithSearch } from './FilterWithSearch';
+import { Filter } from './Filter';
 import { getGenresDictionary } from 'api';
 
 const sortItems = (a, b) => a.name.localeCompare(b.name);
@@ -11,7 +11,7 @@ const renderItem = entry => (
 );
 
 export const GenresFilter = ({ name }) => (
-  <FilterWithSearch
+  <Filter
     name={name}
     title="Жанры"
     placeholder="Введите жанр"

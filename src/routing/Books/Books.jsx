@@ -9,10 +9,12 @@ export const Books = () => {
 
   return (
     <>
-      <div className="all-books__wrapper">
+      <div className="all-books__wrapper ">
         <p className="all-books__title">Все книги</p>
       </div>
-      <FilterBlock />
+      <div className="container">
+        <FilterBlock />
+      </div>
     </>
   );
 };

@@ -1,0 +1,48 @@
+.block {
+  margin-bottom: 20px;
+  color: #4a4a4a;
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  &__columns {
+    gap: 16px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  &__list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    &-label {
+      width: 32px;
+      text-align: right;
+    }
+  }
+
+  &__field {
+    width: 92px;
+    box-sizing: border-box;
+  }
+}

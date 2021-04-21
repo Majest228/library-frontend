@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { TextField } from 'components/common/TextField';
 import { useField } from 'formik';
+import { TextField } from 'components/common/TextField';
 import { debouncePromise } from 'utils';
-import './FilterWithSearch.scss';
+import './FilterStyles.scss';
 
 const defaultNotFound = 'Мы не нашли данные по Вашему запросу';
 
-export const FilterWithSearch = ({
+export const Filter = ({
   name,
   delay = 700,
   title,
@@ -15,6 +15,7 @@ export const FilterWithSearch = ({
   getEntries,
   sortItems,
   renderItem,
+  disableSearch = false,
 }) => {
   const [search, setSearch] = useState('');
   const [loaded, setLoaded] = useState(false);
@@ -61,12 +62,14 @@ export const FilterWithSearch = ({
   return (
     <div className="block">
       <p className="block__title">{title}</p>
-      <TextField
-        size="medium"
-        value={search}
-        placeholder={placeholder}
-        onChange={event => setSearch(event.target.value)}
-      />
+      {!disableSearch && (
+        <TextField
+          size="medium"
+          value={search}
+          placeholder={placeholder}
+          onChange={event => setSearch(event.target.value)}
+        />
+      )}
       <div className="block__list">
         {loaded && entries.length === 0 && (
           <div className="block__item">
