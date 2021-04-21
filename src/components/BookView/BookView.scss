@@ -1,15 +1,30 @@
 .book {
-  padding: 70px;
-
   &__row {
     display: flex;
     justify-content: space-between;
   }
 
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
   &__name {
-    font-size: 24px;
-    padding-bottom: 20px;
+    font-size: 36px;
+    padding-right: 30px;
+    font-weight: normal;
+    color: #4a4a4a;
+    padding-bottom: 10px;
     margin: 0;
+  }
+
+  &__type {
+    font-weight: 500;
+    font-size: 16px;
+    color: #72bbff;
+    background: #e1f0ff;
+    border-radius: 4px;
+    padding: 9px 13px;
   }
 
   &__image {
@@ -22,7 +37,7 @@
   &__rating {
     display: flex;
     align-items: center;
-    margin: 30px 0 0 0;
+    margin: 0 0 20px 0;
 
     &-name {
       margin-right: 24px;
@@ -36,11 +51,10 @@
   &__buttons-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
   &__button {
-    margin: 24px 0;
+    margin: 10px 0;
   }
 
   &__property {
@@ -55,32 +69,35 @@
         text-align: left;
         font-size: 24px;
         padding-bottom: 20px;
+        color: #4a4a4a;
       }
 
       td {
         &:nth-child(1) {
-          color: #616161;
+          color: #4a4a4a;
           min-width: 200px;
           border-right: 1px solid #000;
         }
 
         &:nth-child(2) {
-          padding: 8px 15px;
+          padding: 8px 50px;
         }
       }
     }
   }
 
   &__description {
-    margin-top: 80px;
+    margin-top: 30px;
 
     &__name {
       font-size: 24px;
+      color: #4a4a4a;
       padding-bottom: 20px;
     }
 
     &__text {
       color: #616161;
+      font-size: 18px;
       white-space: pre-wrap;
     }
   }

@@ -6,13 +6,22 @@ import './BookView.scss';
 
 export const BookView = ({ book }) => {
   return (
-    <ShadowWrapper className="book">
-      <h2 className="book__name">{book.name}</h2>
+    <div className="book">
+      <div className="book__title">
+        <h2 className="book__name">{book.name}</h2>
+        <p className="book__type">Книга</p>
+      </div>
+
+      <div className="book__rating">
+        <div className="book__rating-stars">
+          <StarRating rating={book.rating} size={16} disabled />
+        </div>
+      </div>
       <div className="book__row">
         <img className="book__image" src={book.image} alt="" />
         <div className="book__property">
           <table>
-            <caption>Характеристики:</caption>
+            <caption>О книге</caption>
             <tbody>
               <tr>
                 <td>Автор</td>
@@ -48,26 +57,18 @@ export const BookView = ({ book }) => {
               </tr>
             </tbody>
           </table>
-          <div className="book__rating">
-            <div className="book__rating-name">Рейтинг:</div>
-            <div className="book__rating-stars">
-              <StarRating rating={book.rating} size={32} disabled />
-            </div>
-          </div>
         </div>
         <div className="book__buttons-container">
           <Button className="book__button" variant="outlined">
             Добавить в избранное
           </Button>
-          <Button className="book__button" variant="outlined">
-            Купить
-          </Button>
+          <Button className="book__button">Читать</Button>
         </div>
       </div>
       <div className="book__description">
-        <div className="book__description__name">Описание:</div>
+        <div className="book__description__name">Описание</div>
         <div className="book__description__text">{book.description}</div>
       </div>
-    </ShadowWrapper>
+    </div>
   );
 };
