@@ -5,14 +5,16 @@ import { GenresFilter } from 'components/search/GenresFilter';
 import { LanguagesFilter } from 'components/search/LanguagesFilter';
 import { YearsFilter } from 'components/search/YearsFilter';
 import { AgeLimitFilter } from 'components/search/AgeLimitFilter';
+import { TypeOfContentFilter } from 'components/search/TypeOfContentFilter';
 import './FilterBlock.scss';
 
 const initialValues = {
   authors: [],
   genres: [],
-  languages: [],
-  ageLimits: [],
   years: { from: '', to: '' },
+  ageLimits: [],
+  languages: [],
+  typeOfContent: [],
 };
 
 export const FilterBlock = () => {
@@ -23,11 +25,12 @@ export const FilterBlock = () => {
         {({ values }) => (
           <div className="filter-container">
             <AuthorsFilter name="authors" />
+            <GenresFilter name="genres" />
             <YearsFilter name="years" />
             <AgeLimitFilter name="ageLimits" />
             <LanguagesFilter name="languages" />
-            <GenresFilter name="genres" />
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+            <TypeOfContentFilter name="typeOfContent" />
+            <pre>{JSON.stringify(values, null, 2)}</pre>
           </div>
         )}
       </Formik>

@@ -3,6 +3,7 @@ import { useField } from 'formik';
 import { TextField } from 'components/common/TextField';
 import { debouncePromise } from 'utils';
 import './FilterStyles.scss';
+import { CustomCheckbox } from 'components/common/CustomChecbox/CustomCheckbox';
 
 const defaultNotFound = 'Мы не нашли данные по Вашему запросу';
 
@@ -35,7 +36,7 @@ export const Filter = ({
 
     if (isSearchEmpty) {
       list.push(...other);
-      list.sort(sortItems);
+      // list.sort(sortItems);
     } else {
       other.sort(sortItems);
       list.push(...other);
@@ -78,8 +79,7 @@ export const Filter = ({
         )}
         {list.map(entry => (
           <label className="block__item" key={entry.id}>
-            <input
-              className="custom-checkbox"
+            <CustomCheckbox
               type="checkbox"
               value={entry.id}
               checked={checked.has(entry.id)}

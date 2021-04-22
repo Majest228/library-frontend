@@ -1,4 +1,6 @@
 .block {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   color: #4a4a4a;
   &__title {
@@ -23,6 +25,12 @@
   &__item {
     margin-bottom: 10px;
     font-size: 18px;
+    line-height: 24px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content 1fr;
+    gap: 6px;
+    overflow: hidden;
 
     &:last-child {
       margin-bottom: 0;
@@ -31,13 +39,11 @@
 
   &__control {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     overflow: hidden;
 
     &-label {
       width: 32px;
-      text-align: right;
     }
   }
 

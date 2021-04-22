@@ -22,3 +22,7 @@ export const getAgeLimitsDictionary = () => {
 export const getYearsOfPublicationRange = () => {
   return axios.get(`/api/dictionary/yearOfPublicaton`).then(response => response.data);
 };
+
+export const getTypeOfContentDictionary = () => {
+  return axios.get(`/api/dictionary/typeOfContent`).then(response => response.data);
+};
