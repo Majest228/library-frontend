@@ -30,3 +30,9 @@ body {
 .fullpage {
   flex-grow: 1;
 }
+
+@media (max-width: 996px) {
+  .container {
+    max-width: 769px;
+  }
+}

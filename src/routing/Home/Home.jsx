@@ -37,7 +37,7 @@ export const Home = () => {
   return (
     <>
       <Intro />
-      <div className="categories">
+      <div className="container">
         <CategoryView
           title="Книги"
           moreText="Все книги"

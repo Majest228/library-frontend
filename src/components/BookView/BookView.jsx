@@ -1,5 +1,4 @@
 import React from 'react';
-import { ShadowWrapper } from 'components/ShadowWrapper';
 import { Button } from 'components/common/Button';
 import { StarRating } from 'components/common/StarRating';
 import './BookView.scss';

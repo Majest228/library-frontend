@@ -18,6 +18,10 @@ export const Header = () => {
           <Button>Получить подписку</Button>
           <Button variant="outlined">Войти</Button>
         </div>
+        <div className="header__buttons-adaptive">
+          <LikeButton className="header__favorites" liked secondary />
+          <Button variant="outlined">___</Button>
+        </div>
       </div>
       <hr className="header__divider" />
       <nav className="header__menu">
