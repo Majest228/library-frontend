@@ -33,12 +33,12 @@ export const AuthorCard = ({ author }) => {
             {author.fullName}
           </div>
           <div className="modal__date-of-birth">
-            <b>Родился: </b>
+            <b>Родился(ась): </b>
             {author.bornDate}
           </div>
           {author.deathDate && (
             <div className="modal__date-of-death">
-              <b>Умер: </b>
+              <b>Умер(ла): </b>
               {author.deathDate}
             </div>
           )}

@@ -1,8 +1,10 @@
 .all-books {
   margin-bottom: 50px;
+
   &__wrapper {
     background-color: var(--primary-color);
     min-height: 280px;
+    overflow: hidden;
   }
 
   &__title {
@@ -12,5 +14,9 @@
     position: relative;
     top: 86px;
     margin: 0;
+  }
+
+  &__columns {
+    display: flex;
   }
 }

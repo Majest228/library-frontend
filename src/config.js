@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { Cancel } from 'axios';
 import { toast } from 'react-toastify';
 
 axios.interceptors.response.use(
@@ -15,6 +15,10 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
+    if (error instanceof Cancel) {
+      return Promise.reject(error);
+    }
+
     if (error.response !== undefined) {
       const message = error.response.data?.message;
       if (message) {

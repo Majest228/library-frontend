@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FilterBlock } from 'components/FilterBlock';
+import { BooksList } from 'components/common/BooksPage';
 import './Books.scss';
 
 export const Books = () => {
@@ -8,13 +9,16 @@ export const Books = () => {
   }, []);
 
   return (
-    <>
+    <div className="all-books">
       <div className="all-books__wrapper ">
         <p className="all-books__title">Все книги</p>
       </div>
       <div className="container">
-        <FilterBlock />
+        <div className="all-books__columns">
+          <FilterBlock />
+          <BooksList />
+        </div>
       </div>
-    </>
+    </div>
   );
 };

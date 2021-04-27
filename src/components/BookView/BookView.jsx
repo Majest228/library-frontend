@@ -1,9 +1,13 @@
 import React from 'react';
 import { Button } from 'components/common/Button';
 import { StarRating } from 'components/common/StarRating';
+import Premium from 'icons/Premium.jsx';
+import Free from 'icons/Free.jsx';
 import './BookView.scss';
 
 export const BookView = ({ book }) => {
+  const Icon = book.typeOfContent ? Premium : Free;
+
   return (
     <div className="book">
       <div className="book__title">
@@ -62,6 +66,10 @@ export const BookView = ({ book }) => {
             Добавить в избранное
           </Button>
           <Button className="book__button">Читать</Button>
+          <div className="book__premium">
+            <p className="book__premium__text">Подписка:</p>
+            <Icon className="book__premium__icon" />
+          </div>
         </div>
       </div>
       <div className="book__description">

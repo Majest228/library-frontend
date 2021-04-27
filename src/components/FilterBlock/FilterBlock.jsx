@@ -6,6 +6,7 @@ import { LanguagesFilter } from 'components/search/LanguagesFilter';
 import { YearsFilter } from 'components/search/YearsFilter';
 import { AgeLimitFilter } from 'components/search/AgeLimitFilter';
 import { TypeOfContentFilter } from 'components/search/TypeOfContentFilter';
+import BooksLoader from 'components/BooksLoader';
 import './FilterBlock.scss';
 
 const initialValues = {
@@ -19,7 +20,7 @@ const initialValues = {
 
 export const FilterBlock = () => {
   return (
-    <>
+    <div>
       <h2 className="heading">Сортировка</h2>
       <Formik initialValues={initialValues}>
         {({ values }) => (
@@ -30,10 +31,10 @@ export const FilterBlock = () => {
             <AgeLimitFilter name="ageLimits" />
             <LanguagesFilter name="languages" />
             <TypeOfContentFilter name="typeOfContent" />
-            <pre>{JSON.stringify(values, null, 2)}</pre>
+            <BooksLoader values={values} />
           </div>
         )}
       </Formik>
-    </>
+    </div>
   );
 };
