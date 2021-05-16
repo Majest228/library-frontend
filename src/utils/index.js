@@ -25,20 +25,18 @@ export const debouncePromise = (handler, duration = 0) => {
   return (...args) =>
     new Promise((resolve, reject) => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        const currentPending = [...pending];
-        pending.length = 0;
 
+      for (const promise of pending) {
+        promise.reject('Cancel');
+      }
+      pending.length = 0;
+      pending.push({ resolve, reject });
+
+      timeoutId = setTimeout(() => {
         Promise.resolve(handler.apply(this, args)).then(
-          data => {
-            currentPending.forEach(({ resolve }) => resolve(data));
-          },
-          error => {
-            currentPending.forEach(({ reject }) => reject(error));
-          }
+          data => resolve(data),
+          error => reject(error)
         );
       }, duration);
-
-      pending.push({ resolve, reject });
     });
 };

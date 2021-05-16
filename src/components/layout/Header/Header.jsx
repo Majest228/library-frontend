@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { TextField } from 'components/common/TextField';
+import { Search } from '../Search';
 import { Button } from 'components/common/Button';
 import { LikeButton } from 'components/LikeButton';
 import './Header.scss';
@@ -12,7 +12,7 @@ export const Header = () => {
         <NavLink className="header__title" to="/">
           <h1 className="header__logo">WEWEBOOK</h1>
         </NavLink>
-        <TextField className="header__search" placeholder="Начните поиск" />
+        <Search className="header__search" />
         <div className="header__buttons">
           <LikeButton className="header__favorites" liked secondary />
           <Button>Получить подписку</Button>

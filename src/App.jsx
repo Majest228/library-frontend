@@ -9,6 +9,7 @@ import { Authors } from 'routing/Authors';
 import { Genres } from 'routing/Genres';
 import { Books } from 'routing/Books';
 import { Error } from 'components/Error';
+import { AboutProject } from 'routing/AboutProject';
 
 const App = () => (
   <Router>
@@ -30,6 +31,9 @@ const App = () => (
         </Route>
         <Route path="/books">
           <Books />
+        </Route>
+        <Route path="/about">
+          <AboutProject />
         </Route>
         <Route path="*">
           <div className="container">

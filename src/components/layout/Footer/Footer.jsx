@@ -12,18 +12,13 @@ export const Footer = () => {
           <div className="footer__image-wrapper">
             <img className="footer__image" src={logo} alt="" />
           </div>
-          <div className="footer__description">Знания это сила</div>
+          <div className="footer__description">Знания это сила!</div>
           <div className="footer__copyright">Copyright © 2021</div>
         </div>
         <nav className="footer__link">
           <ul className="footer__link-list">
             <li className="footer__link-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
-                О нас
-              </NavLink>
-            </li>
-            <li className="footer__link-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
+              <NavLink className="footer__link-list-item-link" to="/about">
                 О проекте
               </NavLink>
             </li>

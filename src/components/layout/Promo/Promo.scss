@@ -11,6 +11,12 @@
 
 .promo__icon {
   margin-right: 10px;
+  transition: 1s;
+
+  &:hover {
+    color: var(--secondary-color);
+    transition: 0.5s;
+  }
 }
 
 .promo__text {

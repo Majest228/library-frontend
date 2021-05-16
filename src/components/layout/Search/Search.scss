@@ -1,0 +1,97 @@
+.search {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    z-index: 2;
+  }
+
+  &__popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 66px 8px 8px 8px;
+    margin: -8px;
+    border-radius: 6px;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__message {
+    margin: 0;
+    font-size: 14px;
+    color: #bbbbbb;
+  }
+
+  &__items {
+    max-height: 358px;
+    gap: 8px;
+    display: grid;
+    grid-auto-rows: max-content;
+    overflow: auto;
+  }
+
+  &__item {
+    gap: 8px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    text-decoration: none;
+
+    &-line {
+      display: flex;
+      align-items: center;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-image {
+      width: 64px;
+      height: 64px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: block;
+      object-fit: contain;
+      background-color: #e7e7e7;
+    }
+
+    &-title,
+    &-author,
+    &-genre {
+      margin: 0;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #000000;
+    }
+
+    &-author,
+    &-genre {
+      font-size: 14px;
+      color: #999999;
+    }
+
+    &-dot {
+      margin: 0 4px;
+      display: block;
+      color: #bbbbbb;
+      line-height: 0;
+    }
+  }
+}

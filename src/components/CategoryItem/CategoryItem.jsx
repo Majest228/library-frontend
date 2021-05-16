@@ -73,4 +73,6 @@ CategoryItem.propTypes = {
     rating: PropTypes.number,
     favorited: PropTypes.bool,
   }).isRequired,
+  onNameClick: PropTypes.func,
+  onDescriptionClick: PropTypes.func,
 };

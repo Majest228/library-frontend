@@ -4,9 +4,42 @@ import { StarRating } from 'components/common/StarRating';
 import Premium from 'icons/Premium.jsx';
 import Free from 'icons/Free.jsx';
 import './BookView.scss';
+import { getBookPdf } from 'api';
 
 export const BookView = ({ book }) => {
   const Icon = book.typeOfContent ? Premium : Free;
+
+  const openPdf = () =>
+    getBookPdf(book.id).then(data => {
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(data);
+
+      link.href = url;
+      link.target = '_blank';
+      link.addEventListener('click', () => {
+        setTimeout(() => {
+          URL.revokeObjectURL(url);
+        });
+      });
+
+      link.click();
+    });
+
+  const downloadPdf = () =>
+    getBookPdf(book.id).then(data => {
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(data);
+
+      link.href = url;
+      link.download = book.name;
+      link.addEventListener('click', () => {
+        setTimeout(() => {
+          URL.revokeObjectURL(url);
+        });
+      });
+
+      link.click();
+    });
 
   return (
     <div className="book">
@@ -65,7 +98,16 @@ export const BookView = ({ book }) => {
           <Button className="book__button" variant="outlined">
             Добавить в избранное
           </Button>
-          <Button className="book__button">Читать</Button>
+          {book.pdfExists === 1 && (
+            <>
+              <Button className="book__button" onClick={openPdf}>
+                Читать
+              </Button>
+              <Button className="book__button" onClick={downloadPdf}>
+                Скачать
+              </Button>
+            </>
+          )}
           <div className="book__premium">
             <p className="book__premium__text">Подписка:</p>
             <Icon className="book__premium__icon" />

@@ -1,14 +1,26 @@
 .book-list {
   margin-top: 30px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
+  &__button-wrapper {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+  }
 
   &__button-container {
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    display: grid;
+    gap: 8px;
+    grid-auto-flow: column;
+    grid-auto-columns: 36px;
+    justify-items: center;
     align-items: center;
   }
 
   &__button {
-    margin: 0 3.5px;
     font-size: 22px;
     height: 36px;
     width: 36px;
@@ -17,16 +29,31 @@
     outline: none;
     border-radius: 50%;
     color: #4a4a4a;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--transparent-secondary-color);
+    }
 
     &--active {
-      background-color: #f2762e;
+      background-color: var(--secondary-color);
       color: #fff;
+
+      &:hover {
+        background-color: var(--darken-secondary-color);
+      }
     }
   }
 
   &__total {
+    color: #4a4a4a;
   }
-}
-.three-dots {
-  margin: 0 12px;
+
+  &__items {
+    margin: 22px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 53px 16px;
+  }
 }
