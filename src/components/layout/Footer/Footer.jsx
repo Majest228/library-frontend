@@ -28,27 +28,8 @@ export const Footer = () => {
               </NavLink>
             </li>
             <li className="footer__link-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
+              <NavLink className="footer__link-list-item-link" to="/contacts">
                 Контакты
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-        <nav className="footer__trend">
-          <ul className="footer__trend-list">
-            <li className="footer__trend-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
-                Бестселлеры
-              </NavLink>
-            </li>
-            <li className="footer__trend-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
-                Популярные авторы
-              </NavLink>
-            </li>
-            <li className="footer__trend-list-item">
-              <NavLink className="footer__link-list-item-link" to="/">
-                Популярные жанры
               </NavLink>
             </li>
           </ul>

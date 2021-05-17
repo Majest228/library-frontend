@@ -9,6 +9,7 @@ export const AboutProject = () => {
 
   return (
     <ShadowWrapper className="about-project-page container">
+      <h2 className="about-project-page__name">О проекте</h2>
       <div className="about-project-page__title">Что это такое?</div>
       <div className="about-project-page__description">
         <p className="about-project-page__paragraph">

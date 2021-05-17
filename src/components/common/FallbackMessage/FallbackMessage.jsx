@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import './FallbackMessage.scss';
 import warning from './images/warning.png';
 import loading from './images/loading.png';
+import construction from './images/construction.png';
 
-const imageMapping = { loading, warning };
+const imageMapping = { loading, warning, construction };
 
 export const FallbackMessage = ({ type, children }) => {
   const image = imageMapping[type] || null;
@@ -18,6 +19,6 @@ export const FallbackMessage = ({ type, children }) => {
 };
 
 FallbackMessage.propTypes = {
-  type: PropTypes.oneOf(['loading', 'warning']),
+  type: PropTypes.oneOf(['loading', 'warning', 'construction']),
   children: PropTypes.string,
 };

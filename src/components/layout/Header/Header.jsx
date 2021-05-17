@@ -42,7 +42,7 @@ export const Header = () => {
             </NavLink>
           </li>
           <li className="header__menu-item">
-            <NavLink to="/" className="header__link">
+            <NavLink to="/audiobooks" className="header__link">
               Аудиокниги
             </NavLink>
           </li>

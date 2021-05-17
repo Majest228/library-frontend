@@ -10,6 +10,8 @@ import { Genres } from 'routing/Genres';
 import { Books } from 'routing/Books';
 import { Error } from 'components/Error';
 import { AboutProject } from 'routing/AboutProject';
+import { Contacts } from 'routing/Сontacts';
+import { Audiobooks } from 'routing/Audiobooks';
 
 const App = () => (
   <Router>
@@ -32,8 +34,14 @@ const App = () => (
         <Route path="/books">
           <Books />
         </Route>
+        <Route path="/audiobooks">
+          <Audiobooks />
+        </Route>
         <Route path="/about">
           <AboutProject />
+        </Route>
+        <Route path="/contacts">
+          <Contacts />
         </Route>
         <Route path="*">
           <div className="container">

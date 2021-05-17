@@ -32,11 +32,13 @@
   }
 
   &__link-list {
+    display: flex;
     list-style: none;
   }
 
   &__link-list-item {
     font-size: 30px;
+    margin: 0px 24px;
   }
   &__link-list-item-link {
     color: #ffffff;
