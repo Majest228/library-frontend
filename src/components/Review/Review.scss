@@ -1,0 +1,41 @@
+.review {
+  &__container {
+    margin: 0 auto;
+    width: 580px;
+    color: #4a4a4a;
+    margin-bottom: 70px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__specifications {
+    padding: 8px;
+    &-fullName {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    &-post {
+      font-size: 16px;
+      color: #707070;
+    }
+
+    &-image {
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      margin-right: 64px;
+      object-fit: contain;
+    }
+  }
+
+  &__description {
+    padding: 8px;
+    background: rgb(230, 230, 230);
+    border-radius: 8px;
+    word-break: break-word;
+  }
+}

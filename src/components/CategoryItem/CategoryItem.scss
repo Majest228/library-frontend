@@ -1,5 +1,16 @@
+$shadow-color: rgba(0, 0, 0, 0.07);
 .category-item {
   max-width: 190px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    .category-item__image {
+      transition: 0.3s all ease-in;
+      transform: scale(1.06);
+    }
+  }
 
   &__image {
     width: 190px;
@@ -7,6 +18,7 @@
     border-radius: 10px;
     display: block;
     object-fit: cover;
+    transition: 0.2s all ease-in;
 
     &:not([src]) {
       animation: blink 2s ease-in-out infinite;
@@ -15,6 +27,9 @@
 
   &__content {
     padding: 10px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   &__user-score {
@@ -33,6 +48,10 @@
 
   &__info {
     color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 
   &__invisible-button {
@@ -64,9 +83,10 @@
   }
 
   &__descrtiption {
-    margin: 4px 0 0 0;
+    margin: 4px 0 4px 0;
     font-size: 14px;
     font-weight: 300;
+    vertical-align: bottom;
   }
 
   &__skeleton {

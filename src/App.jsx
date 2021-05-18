@@ -12,6 +12,7 @@ import { Error } from 'components/Error';
 import { AboutProject } from 'routing/AboutProject';
 import { Contacts } from 'routing/Сontacts';
 import { Audiobooks } from 'routing/Audiobooks';
+import { Reviews } from 'routing/Reviews';
 
 const App = () => (
   <Router>
@@ -42,6 +43,9 @@ const App = () => (
         </Route>
         <Route path="/contacts">
           <Contacts />
+        </Route>
+        <Route path="/reviews">
+          <Reviews />
         </Route>
         <Route path="*">
           <div className="container">

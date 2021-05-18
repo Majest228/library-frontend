@@ -14,7 +14,7 @@ export const Header = () => {
         </NavLink>
         <Search className="header__search" />
         <div className="header__buttons">
-          <LikeButton className="header__favorites" liked secondary />
+          {/* <LikeButton className="header__favorites" liked secondary /> */}
           <Button>Получить подписку</Button>
           <Button variant="outlined">Войти</Button>
         </div>

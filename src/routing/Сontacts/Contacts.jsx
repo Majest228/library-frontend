@@ -80,14 +80,16 @@ export const Contacts = () => {
           </div>
         </div>
         <div className="contacts-page__column">
-          <iframe
-            className="contacts-page__map"
-            title="Наше местоположение"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Acc7fca44074c11f67bd635543be4e760bc4435054f3fc421010391d2cd438c33&amp;source=constructor"
-            width="500"
-            height="400"
-            frameborder="0"
-          ></iframe>
+          <div className="contacts-page__map-wrapper">
+            <iframe
+              className="contacts-page__map"
+              title="Наше местоположение"
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Acc7fca44074c11f67bd635543be4e760bc4435054f3fc421010391d2cd438c33&amp;source=constructor"
+              width="500"
+              height="400"
+              frameborder="0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </ShadowWrapper>

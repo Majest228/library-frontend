@@ -1,0 +1,17 @@
+.reviews-page {
+  padding: 70px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 28px;
+    text-align: center;
+    color: #4a4a4a;
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

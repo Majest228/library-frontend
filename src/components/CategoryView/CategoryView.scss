@@ -36,6 +36,7 @@
   &__items {
     display: flex;
     overflow-x: auto;
+    padding: 0 6px;
 
     &::-webkit-scrollbar {
       height: 6px;

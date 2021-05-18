@@ -1,5 +1,7 @@
+$shadow-color: rgba(0, 0, 0, 0.07);
+
 .contacts-page {
-  color: #616161;
+  color: #4a4a4a;
   padding: 70px;
   margin-top: 30px;
   margin-bottom: 60px;
@@ -48,6 +50,10 @@
 
   &__map {
     margin-right: 50px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px $shadow-color, 0 2px 4px $shadow-color, 0 4px 8px $shadow-color,
+      0 8px 16px $shadow-color, 0 16px 32px $shadow-color, 0 32px 64px $shadow-color;
+    background: rgb(252, 252, 252);
   }
 }
 
