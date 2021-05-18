@@ -47,7 +47,6 @@ export const BookView = ({ book }) => {
         <h2 className="book__name">{book.name}</h2>
         <p className="book__type">Книга</p>
       </div>
-
       <div className="book__rating">
         <div className="book__rating-stars">
           <StarRating rating={book.rating} size={16} disabled />
@@ -113,6 +112,26 @@ export const BookView = ({ book }) => {
             <Icon className="book__premium__icon" />
           </div>
         </div>
+      </div>
+
+      <div className="book__buttons-container-small">
+        <Button className="book__button-small" variant="outlined">
+          Добавить в избранное
+        </Button>
+        {book.pdfExists === 1 && (
+          <>
+            <Button className="book__button-small" onClick={openPdf}>
+              Читать
+            </Button>
+            <Button className="book__button-small" onClick={downloadPdf}>
+              Скачать
+            </Button>
+          </>
+        )}
+      </div>
+      <div className="book__premium-small">
+        <p className="book__premium__text-small">Подписка:</p>
+        <Icon className="book__premium__icon-small" />
       </div>
       <div className="book__description">
         <div className="book__description__name">Описание</div>

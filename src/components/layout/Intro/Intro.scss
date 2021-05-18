@@ -119,3 +119,40 @@ $image-y-offset: 80px;
     }
   }
 }
+
+@media (max-width: 821px) {
+  .intro {
+    &__container {
+      display: block;
+      text-align: center;
+    }
+    &__image {
+      margin: 0 auto ($image-y-offset * -1);
+      user-select: none;
+      width: 650px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .intro {
+    &__container {
+      display: block;
+      text-align: center;
+    }
+    &__image {
+      margin: 0 auto ($image-y-offset * -1);
+      user-select: none;
+      width: 550px;
+    }
+  }
+}
+
+@media (max-width: 659px) {
+  .intro {
+    &__container {
+      display: block;
+      text-align: center;
+    }
+  }
+}

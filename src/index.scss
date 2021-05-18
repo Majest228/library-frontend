@@ -37,3 +37,13 @@ body {
     max-width: 769px;
   }
 }
+@media (max-width: 769px) {
+  .container {
+    max-width: 659px;
+  }
+}
+@media (max-width: 659px) {
+  .container {
+    max-width: none;
+  }
+}
