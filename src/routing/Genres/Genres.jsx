@@ -34,9 +34,13 @@ export const Genres = () => {
         value={search}
         onChange={searchChange}
       />
-      {filteredGenres.map(genre => (
-        <GenreItem genre={genre} key={genre.id} />
-      ))}
+      {genres.length !== 0 ? (
+        filteredGenres.length !== 0 ? (
+          filteredGenres.map(genre => <GenreItem genre={genre} key={genre.id} />)
+        ) : (
+          <div className="genres-page__warning">Совпадений не найденно</div>
+        )
+      ) : null}
     </ShadowWrapper>
   );
 };

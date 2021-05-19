@@ -28,30 +28,31 @@ const BooksList = ({ page, setPage, total, list }) => {
 
   const openBook = book => history.push(`/book/${book.id}`);
 
-  const pagination = (
-    <div className="book-list__button-container">
-      {pages[0] !== 0 && (
-        <>
-          <PageButton page={0} active={page === 0} onClick={setPage} />
-          <span>...</span>
-        </>
-      )}
-      {pages.map(otherPage => (
-        <PageButton
-          page={otherPage}
-          active={page === otherPage}
-          onClick={setPage}
-          key={otherPage}
-        />
-      ))}
-      {pages[pages.length - 1] !== count - 1 && (
-        <>
-          <span>...</span>
-          <PageButton page={count - 1} active={page === count - 1} onClick={setPage} />
-        </>
-      )}
-    </div>
-  );
+  const pagination =
+    total !== 0 ? (
+      <div className="book-list__button-container">
+        {pages[0] !== 0 && (
+          <>
+            <PageButton page={0} active={page === 0} onClick={setPage} />
+            <span>...</span>
+          </>
+        )}
+        {pages.map(otherPage => (
+          <PageButton
+            page={otherPage}
+            active={page === otherPage}
+            onClick={setPage}
+            key={otherPage}
+          />
+        ))}
+        {pages[pages.length - 1] !== count - 1 && (
+          <>
+            <span>...</span>
+            <PageButton page={count - 1} active={page === count - 1} onClick={setPage} />
+          </>
+        )}
+      </div>
+    ) : null;
 
   return (
     <div className="book-list">

@@ -6,6 +6,12 @@
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+
+  &__warning {
+    margin-top: 50px;
+    font-size: 24px;
+    color: #4a4a4a;
+  }
 }
 
 .genres__search {

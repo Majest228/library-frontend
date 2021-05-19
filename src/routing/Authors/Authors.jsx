@@ -34,9 +34,13 @@ export const Authors = () => {
         value={search}
         onChange={searchChange}
       />
-      {filteredAuthors.map(author => (
-        <AuthorCard author={author} key={author.id} />
-      ))}
+      {authors.length !== 0 ? (
+        filteredAuthors.length !== 0 ? (
+          filteredAuthors.map(author => <AuthorCard author={author} key={author.id} />)
+        ) : (
+          <div className="author-page__warning">Совпадений не найдено</div>
+        )
+      ) : null}
     </ShadowWrapper>
   );
 };

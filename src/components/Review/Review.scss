@@ -4,6 +4,13 @@
     width: 580px;
     color: #4a4a4a;
     margin-bottom: 70px;
+
+    &:hover {
+      .review__description {
+        transition: 0.3s all ease-in;
+        background-color: rgb(210, 210, 210);
+      }
+    }
   }
 
   &__row {
@@ -37,5 +44,6 @@
     background: rgb(230, 230, 230);
     border-radius: 8px;
     word-break: break-word;
+    transition: 0.5s all ease-in;
   }
 }

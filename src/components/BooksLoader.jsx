@@ -34,7 +34,7 @@ const BooksLoader = ({ values, page, setPage, bulkSetBooks }) => {
   const debouncedSearchBooks = useMemo(() => debouncePromise(searchBooks, 100), []);
 
   useEffect(() => {
-    searchBooks(prepareValues(values), BOOKS_SIZE)
+    searchBooks(prepareValues(values), BOOKS_SIZE, page || 0)
       .then(([request]) => request)
       .then(response => {
         loaded.current = true;
