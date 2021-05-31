@@ -34,14 +34,14 @@ export const Footer = () => {
             </li>
           </ul>
         </nav>
-        <div className="footer__buttons">
+        {/* <div className="footer__buttons">
           <Button className="footer__button" size="medium">
             Получить подписку
           </Button>
           <Button className="footer__button" variant="outlined" size="medium">
             Войти
           </Button>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

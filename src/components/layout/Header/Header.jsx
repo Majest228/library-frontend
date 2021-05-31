@@ -15,8 +15,8 @@ export const Header = () => {
         <Search className="header__search" />
         <div className="header__buttons">
           {/* <LikeButton className="header__favorites" liked secondary /> */}
-          <Button>Получить подписку</Button>
-          <Button variant="outlined">Войти</Button>
+          {/* <Button>Получить подписку</Button>
+          <Button variant="outlined">Войти</Button> */}
         </div>
         <div className="header__buttons-adaptive">
           <LikeButton className="header__favorites" liked secondary />
