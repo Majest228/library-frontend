@@ -20,11 +20,11 @@ export const AboutProject = () => {
           бестселлеров и классической литературы. Идея библиотеки в том, что вместо покупки
           отдельных книг вы получаете доступ ко всему каталогу при наличии подписки.
         </p>
-        {/* <p className="about-project-page__paragraph">
+        <p className="about-project-page__paragraph">
           Зарегистрированные пользователи, чтобы не потерять понравившиеся произведения, могут
           добавлять их в избранное. Теперь не придётся долго искать любимую книгу и можно собирать
           подборки.
-        </p> */}
+        </p>
       </div>
       <div className="about-project-page__title">Поиск</div>
       <div className="about-project-page__description">
@@ -46,7 +46,7 @@ export const AboutProject = () => {
           Все произведения на сайте пока-что представлены в формате pdf, но в будущем количество
           форматов может увеличится.
         </p>
-        <p className="about-project-page__paragraph">Сейчас у нас в коллекции более 1000 книг.</p>
+        <p className="about-project-page__paragraph">Сейчас у нас в коллекции более 900 книг.</p>
       </div>
       <div className="about-project-page__title">Наша миссия</div>
       <div className="about-project-page__description">

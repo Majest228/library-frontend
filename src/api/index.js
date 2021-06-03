@@ -3,3 +3,4 @@ export * from './author';
 export * from './genre';
 export * from './dictionary';
 export * from './search';
+export * from './user';

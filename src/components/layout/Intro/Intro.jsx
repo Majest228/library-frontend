@@ -1,5 +1,5 @@
-import { Button } from 'components/common/Button';
 import React from 'react';
+import { RouteButton } from 'components/common/RouteButton';
 import hero from './hero.svg';
 import './Intro.scss';
 
@@ -14,9 +14,9 @@ export const Intro = () => {
             <br />с помощью подписки
           </p>
           <div className="intro__button-wrapper">
-            <Button className="intro__button" size="large">
+            <RouteButton className="intro__button" size="large" to="/subscribe">
               Оформить подписку
-            </Button>
+            </RouteButton>
             <p className="intro__tag">#wewebookвсегдатут</p>
           </div>
         </div>

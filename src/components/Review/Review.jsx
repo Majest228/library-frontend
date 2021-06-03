@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './images/User';
+import User from '../../icons/User';
 import './Review.scss';
 
 export const Review = ({ fullName, post, image, children }) => {

@@ -10,3 +10,6 @@ export const getRandomBooks = (count = 10) =>
 
 export const getPopularBooks = (count = 10) =>
   axios.get(`/api/book/popular/${count}`).then(response => response.data);
+
+export const getLastAddedBooks = (count = 10) =>
+  axios.get(`/api/book/lastadded/${count}`).then(response => response.data);

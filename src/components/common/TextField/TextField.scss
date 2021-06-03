@@ -2,11 +2,19 @@
 
 .text-field {
   padding: 12px 20px;
-  border: 2px solid var(--primary-color);
-  border-radius: 5px;
+  border: none;
   font-size: inherit;
   font-family: inherit;
   transition: border-color $duration ease-in-out;
+
+  &--outlined {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+  }
+
+  &--underlined {
+    border-bottom: 2px solid var(--primary-color);
+  }
 
   &--medium {
     padding: 7px 15px;

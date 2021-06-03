@@ -1,5 +1,14 @@
 import axios, { Cancel } from 'axios';
+import localForage from 'localforage';
 import { toast } from 'react-toastify';
+
+axios.interceptors.request.use(async config => {
+  const token = await localForage.getItem('token');
+  if (token !== null) {
+    config.headers['Authorization'] = `Bearer ${token}`;
+  }
+  return config;
+});
 
 axios.interceptors.response.use(
   response => {

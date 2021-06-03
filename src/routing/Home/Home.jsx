@@ -3,17 +3,23 @@ import { useHistory } from 'react-router';
 import { Intro } from 'components/layout/Intro';
 import { CategoryView } from 'components/CategoryView';
 import { toAuthor, toBook } from 'utils/transforms';
-import { getRandomBooks, getRandomAuthors, getPopularBooks } from 'api';
+import { getRandomBooks, getRandomAuthors, getPopularBooks, getLastAddedBooks } from 'api';
 import './Home.scss';
 
 const getBooks = () =>
-  getRandomBooks(10).then(response => ({
+  getRandomBooks(15).then(response => ({
     total: response.data.total,
     list: response.data.list.map(toBook),
   }));
 
 const getCompilation = () =>
   getPopularBooks(10).then(response => ({
+    total: response.data.total,
+    list: response.data.list.map(toBook),
+  }));
+
+const getRecent = () =>
+  getLastAddedBooks(15).then(response => ({
     total: response.data.total,
     list: response.data.list.map(toBook),
   }));
@@ -70,6 +76,11 @@ export const Home = () => {
         <CategoryView
           title="Подборка недели от WeWeBook"
           getItems={getCompilation}
+          onNameClick={openBook}
+        />
+        <CategoryView
+          title="Недавнее обновление на WeWeBook"
+          getItems={getRecent}
           onNameClick={openBook}
         />
       </div>

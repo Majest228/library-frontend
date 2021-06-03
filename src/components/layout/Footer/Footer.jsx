@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { Button } from 'components/common/Button';
+import { RouteButton } from 'components/common/RouteButton';
 import logo from './footer-logo.svg';
 import './Footer.scss';
 
-export const Footer = () => {
+const Footer = ({ auth }) => {
   return (
     <footer className="footer">
       <div className="footer__container container">
@@ -34,15 +35,23 @@ export const Footer = () => {
             </li>
           </ul>
         </nav>
-        {/* <div className="footer__buttons">
-          <Button className="footer__button" size="medium">
+        <div className="footer__buttons">
+          <RouteButton className="footer__button" size="medium" to="/subscribe">
             Получить подписку
-          </Button>
-          <Button className="footer__button" variant="outlined" size="medium">
-            Войти
-          </Button>
-        </div> */}
+          </RouteButton>
+          {!auth && (
+            <RouteButton className="footer__button" variant="outlined" size="medium" to="/login">
+              Войти
+            </RouteButton>
+          )}
+        </div>
       </div>
     </footer>
   );
 };
+
+const mapStateToProps = state => ({
+  auth: state.user.auth,
+});
+
+export default connect(mapStateToProps)(Footer);

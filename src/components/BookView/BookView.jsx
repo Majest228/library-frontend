@@ -97,6 +97,9 @@ export const BookView = ({ book }) => {
           <Button className="book__button" variant="outlined">
             Добавить в избранное
           </Button>
+          <Button className="book__button" variant="outlined">
+            Читать позже
+          </Button>
           {book.pdfExists === 1 && (
             <>
               <Button className="book__button" onClick={openPdf}>

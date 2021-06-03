@@ -5,10 +5,13 @@ import { noop } from 'utils';
 import classes from './Modal.module.scss';
 
 export const Modal = ({ className, open, children, onClose = noop }) => {
+  const backdrop = useRef(null);
   const wrapper = useRef(null);
 
   useEffect(() => {
     document.body.style.setProperty('overflow-y', open ? 'hidden' : 'auto');
+    const scrollbarWidth = window.innerWidth - (backdrop.current || document.body).clientWidth;
+    document.body.style.setProperty('padding-right', open ? `${scrollbarWidth}px` : '0');
   }, [open]);
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export const Modal = ({ className, open, children, onClose = noop }) => {
     <>
       {open && (
         <Portal>
-          <div className={classes.backdrop} onClick={handleClick}>
+          <div className={classes.backdrop} onClick={handleClick} ref={backdrop}>
             <div className={clsx(classes.modal, className)} ref={wrapper}>
               {children}
             </div>

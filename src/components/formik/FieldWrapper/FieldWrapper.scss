@@ -1,0 +1,10 @@
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  &__error {
+    margin: 12px 8px 0 8px;
+    color: #c92407;
+    font-size: 14px;
+  }
+}

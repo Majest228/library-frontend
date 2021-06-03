@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Search } from '../Search';
 import { Button } from 'components/common/Button';
 import { LikeButton } from 'components/LikeButton';
+import { RouteButton } from 'components/common/RouteButton';
+import User from 'icons/User';
 import './Header.scss';
 
-export const Header = () => {
+const Header = ({ user }) => {
   return (
     <header className="header">
       <div className="header__container container">
@@ -14,9 +17,16 @@ export const Header = () => {
         </NavLink>
         <Search className="header__search" />
         <div className="header__buttons">
-          {/* <LikeButton className="header__favorites" liked secondary /> */}
-          {/* <Button>Получить подписку</Button>
-          <Button variant="outlined">Войти</Button> */}
+          <RouteButton to="/subscribe">Получить подписку</RouteButton>
+          {user.auth ? (
+            <NavLink to="/account">
+              <User className="header__user" />
+            </NavLink>
+          ) : (
+            <RouteButton to="/login" variant="outlined">
+              Войти
+            </RouteButton>
+          )}
         </div>
         <div className="header__buttons-adaptive">
           <LikeButton className="header__favorites" liked secondary />
@@ -51,3 +61,9 @@ export const Header = () => {
     </header>
   );
 };
+
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(Header);
