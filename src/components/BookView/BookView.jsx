@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'components/common/Button';
 import { StarRating } from 'components/common/StarRating';
+import { getBookPdf } from 'api';
 import Premium from 'icons/Premium.jsx';
 import Free from 'icons/Free.jsx';
 import './BookView.scss';
-import { getBookPdf } from 'api';
 
 export const BookView = ({ book }) => {
   const Icon = book.typeOfContent ? Premium : Free;

@@ -1,0 +1,46 @@
+.account {
+  &__page {
+    display: flex;
+    flex-direction: column;
+    margin: 80px auto;
+    color: #4a4a4a;
+    font-size: 22px;
+  }
+  &__user {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__row {
+  }
+
+  &__button {
+    margin-top: 32px;
+    align-self: flex-end;
+    flex-grow: 0;
+  }
+}
+
+.user {
+  &__name {
+    font-size: 38px;
+    margin-bottom: 16px;
+  }
+
+  &__age {
+  }
+
+  &__subscribe {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  &__email {
+    margin-bottom: 24px;
+  }
+}
+
+.subscribe__icon {
+  margin-left: 24px;
+}
