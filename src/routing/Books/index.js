@@ -1,1 +1,1 @@
-export * from './Books.jsx';
+export * from './Books';

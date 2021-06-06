@@ -4,7 +4,7 @@ export const toBook = entry => ({
   name: entry.name,
   description: entry.author,
   rating: entry.rating,
-  favorited: false,
+  favorited: entry.favorited || false,
 });
 
 export const toAuthor = entry => ({

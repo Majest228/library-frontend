@@ -72,6 +72,7 @@ export const Home = () => {
             </>
           )}
           getItems={getAuthors}
+          canFavorite={false}
         />
         <CategoryView
           title="Подборка недели от WeWeBook"

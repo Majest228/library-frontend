@@ -114,11 +114,12 @@ const Login = ({ setUser }) => {
           </div>
         </button>
         <div className="modal forgot-password wrapper">
-          <div className="login forgot-password__title">
+          {/* <div className="login forgot-password__title">
             Введите адрес электронной почты:
             <input className="forgot-password__email" type="text" placeholder="Электронная почта" />
           </div>
-          <Button className="login forgot-password__button">Сбросить пароль</Button>
+          <Button className="login forgot-password__button">Сбросить пароль</Button> */}
+          <p>Функционал находится в режиме разработки</p>
         </div>
       </Modal>
     </>

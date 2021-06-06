@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from 'components/common/Button';
 import { StarRating } from 'components/common/StarRating';
+import { noop } from 'utils';
 import { getBookPdf } from 'api';
-import Premium from 'icons/Premium.jsx';
-import Free from 'icons/Free.jsx';
+import Premium from 'icons/Premium';
+import Free from 'icons/Free';
 import './BookView.scss';
+import { connect } from 'react-redux';
 
-export const BookView = ({ book }) => {
+const BookView = ({ book, subscribed = false, toggleFavorite = noop, toggleReadLater = noop }) => {
   const Icon = book.typeOfContent ? Premium : Free;
 
   const openPdf = () =>
@@ -94,16 +96,24 @@ export const BookView = ({ book }) => {
           </table>
         </div>
         <div className="book__buttons-container">
-          <Button className="book__button" variant="outlined">
-            Добавить в избранное
+          <Button
+            className="book__button"
+            variant={book.favorited ? 'filled' : 'outlined'}
+            onClick={toggleFavorite}
+          >
+            {book.favorited ? 'Убрать из избранного' : 'Добавить в избранное'}
           </Button>
-          <Button className="book__button" variant="outlined">
-            Читать позже
+          <Button
+            className="book__button"
+            variant={book.readLater ? 'filled' : 'outlined'}
+            onClick={toggleReadLater}
+          >
+            {book.readLater ? 'Не читать' : 'Читать позже'}
           </Button>
-          {book.pdfExists === 1 && (
+          {book.pdfExists === 1 && subscribed && (
             <>
               <Button className="book__button" onClick={openPdf}>
-                Читать
+                Открыть
               </Button>
               <Button className="book__button" onClick={downloadPdf}>
                 Скачать
@@ -121,10 +131,10 @@ export const BookView = ({ book }) => {
         <Button className="book__button-small" variant="outlined">
           Добавить в избранное
         </Button>
-        {book.pdfExists === 1 && (
+        {book.pdfExists === 1 && subscribed && (
           <>
             <Button className="book__button-small" onClick={openPdf}>
-              Читать
+              Открыть
             </Button>
             <Button className="book__button-small" onClick={downloadPdf}>
               Скачать
@@ -143,3 +153,9 @@ export const BookView = ({ book }) => {
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  subscribed: state.user.info.subscribe !== 0,
+});
+
+export default connect(mapStateToProps)(BookView);

@@ -1,1 +1,1 @@
-export * from './BookView';
+export { default as BookView } from './BookView';

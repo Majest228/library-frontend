@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { CategoryItem, CategoryItemSkeleton } from 'components/CategoryItem';
 import { Fade } from 'components/animations/Fade';
 import { generate } from 'utils';
+import { markAsFavorited } from 'api';
 import './CategoryView.scss';
 
-export const CategoryView = ({
+const CategoryView = ({
   title,
   moreText,
   moreLink,
@@ -14,11 +16,29 @@ export const CategoryView = ({
   getItems,
   onNameClick,
   onDescriptionClick,
+  canFavorite = true,
+  auth,
 }) => {
   const [items, setItems] = useState({
     total: 0,
     list: [],
   });
+
+  const toggleFavorite = useCallback(
+    id => () => {
+      if (auth && canFavorite) {
+        setItems(data => ({
+          ...data,
+          list: data.list.map(item => ({
+            ...item,
+            favorited: item.id === id ? !item.favorited : item.favorited,
+          })),
+        }));
+        markAsFavorited({ id });
+      }
+    },
+    [auth, canFavorite]
+  );
 
   useEffect(() => {
     getItems().then(data => setItems(data));
@@ -47,6 +67,8 @@ export const CategoryView = ({
                   data={entry}
                   onNameClick={onNameClick}
                   onDescriptionClick={onDescriptionClick}
+                  toggleFavorite={toggleFavorite(entry.id)}
+                  canFavorite={canFavorite}
                 />
               </Fade>
             ))
@@ -65,3 +87,9 @@ CategoryView.propTypes = {
   renderItemsCount: PropTypes.func,
   getItems: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = state => ({
+  auth: state.user.auth,
+});
+
+export default connect(mapStateToProps)(CategoryView);

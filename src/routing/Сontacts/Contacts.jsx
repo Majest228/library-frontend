@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ShadowWrapper } from 'components/ShadowWrapper';
-import GithubIcon from '../../icons/GithubIcon.jsx';
+import GithubIcon from '../../icons/GithubIcon';
 import './Contacts.scss';
 
 export const Contacts = () => {

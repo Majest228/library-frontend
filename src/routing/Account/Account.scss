@@ -7,15 +7,13 @@
     font-size: 22px;
   }
   &__user {
+    padding-bottom: 32px;
     display: flex;
     justify-content: space-between;
-  }
-
-  &__row {
+    border-bottom: 1px solid var(--primary-color);
   }
 
   &__button {
-    margin-top: 32px;
     align-self: flex-end;
     flex-grow: 0;
   }
@@ -25,9 +23,6 @@
   &__name {
     font-size: 38px;
     margin-bottom: 16px;
-  }
-
-  &__age {
   }
 
   &__subscribe {
@@ -43,4 +38,17 @@
 
 .subscribe__icon {
   margin-left: 24px;
+}
+
+.container {
+  &__wrapper {
+    margin: 32px 0 80px 0;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+  }
 }

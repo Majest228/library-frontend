@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Promo } from 'components/layout/Promo';
 import { Header } from 'components/layout/Header';
 import { Footer } from 'components/layout/Footer';
@@ -52,20 +52,9 @@ const App = ({ auth }) => (
         <Route path="/reviews">
           <Reviews />
         </Route>
-        {auth ? (
-          <Route path="/account">
-            <Account />
-          </Route>
-        ) : (
-          <>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/registration">
-              <Registration />
-            </Route>
-          </>
-        )}
+        <Route path="/account">{auth ? <Account /> : <Redirect to="/login" />}</Route>
+        <Route path="/login">{auth ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/registration">{auth ? <Redirect to="/" /> : <Registration />}</Route>
         <Route path="/subscribe">
           <Subscribe />
         </Route>

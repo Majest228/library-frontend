@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import clsx from 'clsx';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { BookItem } from './BookItem';
 import { BOOKS_SIZE } from 'constants/search';
+import { noop } from 'utils';
 import { createRange } from 'utils/createRange';
-import { setPage } from 'redux/actions';
+import { markAsFavorited } from 'api';
+import { setPage, favoriteBook } from 'redux/actions';
 import './BooksList.scss';
 
 const PageButton = ({ page, active, onClick }) => (
@@ -20,39 +22,58 @@ const PageButton = ({ page, active, onClick }) => (
   </button>
 );
 
-const BooksList = ({ page, setPage, total, list }) => {
+const BooksList = ({
+  page,
+  setPage,
+  total,
+  list,
+  auth,
+  hidePagination = false,
+  favoriteBook = noop,
+}) => {
   const history = useHistory();
 
   const count = Math.ceil(total / BOOKS_SIZE);
   const pages = React.useMemo(() => createRange(page, 2, count), [page, count]);
+  const canFavorite = favoriteBook !== noop;
 
   const openBook = book => history.push(`/book/${book.id}`);
 
-  const pagination =
-    total !== 0 ? (
-      <div className="book-list__button-container">
-        {pages[0] !== 0 && (
-          <>
-            <PageButton page={0} active={page === 0} onClick={setPage} />
-            <span>...</span>
-          </>
-        )}
-        {pages.map(otherPage => (
-          <PageButton
-            page={otherPage}
-            active={page === otherPage}
-            onClick={setPage}
-            key={otherPage}
-          />
-        ))}
-        {pages[pages.length - 1] !== count - 1 && (
-          <>
-            <span>...</span>
-            <PageButton page={count - 1} active={page === count - 1} onClick={setPage} />
-          </>
-        )}
-      </div>
-    ) : null;
+  const toggleFavorite = useCallback(
+    id => () => {
+      if (auth) {
+        favoriteBook(id);
+        markAsFavorited({ id });
+      }
+    },
+    [auth, favoriteBook]
+  );
+
+  const paginationVisible = total !== 0 ? (hidePagination ? pages.length > 1 : true) : false;
+  const pagination = paginationVisible ? (
+    <div className="book-list__button-container">
+      {pages[0] !== 0 && (
+        <>
+          <PageButton page={0} active={page === 0} onClick={setPage} />
+          <span>...</span>
+        </>
+      )}
+      {pages.map(otherPage => (
+        <PageButton
+          page={otherPage}
+          active={page === otherPage}
+          onClick={setPage}
+          key={otherPage}
+        />
+      ))}
+      {pages[pages.length - 1] !== count - 1 && (
+        <>
+          <span>...</span>
+          <PageButton page={count - 1} active={page === count - 1} onClick={setPage} />
+        </>
+      )}
+    </div>
+  ) : null;
 
   return (
     <div className="book-list">
@@ -64,7 +85,13 @@ const BooksList = ({ page, setPage, total, list }) => {
       </div>
       <div className="book-list__items">
         {list.map(book => (
-          <BookItem book={book} key={book.id} onNameClick={openBook} />
+          <BookItem
+            book={book}
+            onNameClick={openBook}
+            toggleFavorite={toggleFavorite(book.id)}
+            canFavorite={canFavorite}
+            key={book.id}
+          />
         ))}
       </div>
       {pagination}
@@ -74,12 +101,14 @@ const BooksList = ({ page, setPage, total, list }) => {
 
 const mapStateToProps = state => ({
   ...state.books,
+  auth: state.user.auth,
 });
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators({ setPage }, dispatch),
+  ...bindActionCreators({ setPage, favoriteBook }, dispatch),
 });
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
 export default connector(BooksList);
+export { BooksList as DefaultBooksList };

@@ -1,1 +1,1 @@
-export * from './CategoryView';
+export { default as CategoryView } from './CategoryView';

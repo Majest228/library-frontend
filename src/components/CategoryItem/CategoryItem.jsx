@@ -5,7 +5,13 @@ import { LikeButton } from 'components/LikeButton';
 import { noop } from 'utils';
 import './CategoryItem.scss';
 
-export const CategoryItem = ({ data, onNameClick = noop, onDescriptionClick = noop }) => {
+export const CategoryItem = ({
+  data,
+  onNameClick = noop,
+  onDescriptionClick = noop,
+  toggleFavorite = noop,
+  canFavorite,
+}) => {
   const handleNameClick = useCallback(() => onNameClick(data), [onNameClick, data]);
 
   const handleDescriptionClick = useCallback(() => onDescriptionClick(data), [
@@ -21,7 +27,13 @@ export const CategoryItem = ({ data, onNameClick = noop, onDescriptionClick = no
           <>
             <div className="category-item__user-score">
               <StarRating rating={data.rating} disabled />
-              <LikeButton className="category-item__button" liked={data.favorited} disabled />
+              {canFavorite && (
+                <LikeButton
+                  className="category-item__button"
+                  liked={data.favorited}
+                  onClick={toggleFavorite}
+                />
+              )}
             </div>
             <div className="category-item__info">
               <button className="category-item__invisible-button" onClick={handleNameClick}>
@@ -45,7 +57,13 @@ export const CategoryItem = ({ data, onNameClick = noop, onDescriptionClick = no
                   {data.name}
                 </p>
               </button>
-              <LikeButton className="category-item__button" liked={data.favorited} disabled />
+              {canFavorite && (
+                <LikeButton
+                  className="category-item__button"
+                  liked={data.favorited}
+                  onClick={toggleFavorite}
+                />
+              )}
             </div>
             {data.description && (
               <div className="category-item__info">
