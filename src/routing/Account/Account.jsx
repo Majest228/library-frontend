@@ -5,7 +5,7 @@ import { Button } from 'components/common/Button';
 import { DefaultBooksList } from 'components/common/BooksPage';
 import Premium from 'icons/Premium';
 import Free from 'icons/Free';
-import { BOOKS_SIZE } from 'constants/search';
+import { BOOKS_SIZE_ACCOUNT } from 'constants/search';
 import { getFavoritedBooks, getReadLaterBooks } from 'api';
 import { setPage, setTotal, setBooks, favoriteBook, resetStore } from 'redux/actions';
 import booksReducer from 'redux/reducers/books';
@@ -44,7 +44,7 @@ const Account = ({ user, resetStore }) => {
   const exit = useCallback(() => resetStore(), [resetStore]);
 
   useEffect(() => {
-    getFavoritedBooks(BOOKS_SIZE, favorited.page).then(response => {
+    getFavoritedBooks(BOOKS_SIZE_ACCOUNT, favorited.page).then(response => {
       if (response.success) {
         dispatchFavorited(setBooks(response.data.list));
         dispatchFavorited(setTotal(response.data.total));
@@ -53,7 +53,7 @@ const Account = ({ user, resetStore }) => {
   }, [favorited.page]);
 
   useEffect(() => {
-    getReadLaterBooks(BOOKS_SIZE, readLater.page).then(response => {
+    getReadLaterBooks(BOOKS_SIZE_ACCOUNT, readLater.page).then(response => {
       if (response.success) {
         dispatchReadLater(setBooks(response.data.list));
         dispatchReadLater(setTotal(response.data.total));
