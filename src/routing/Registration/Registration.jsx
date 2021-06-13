@@ -150,7 +150,7 @@ export const Registration = () => {
           </Formik>
         </div>
         <div className="registration__image">
-          <img src={registration} alt="" />
+          <img class="registration__image-images" src={registration} alt="" />
           <RouteButton className="form__back-button-reg" to="/login">
             Назад
           </RouteButton>

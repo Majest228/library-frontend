@@ -14,14 +14,16 @@ export const Reviews = () => {
     <ShadowWrapper className="reviews-page container">
       <h2 className="reviews-page__title">Отзывы о нас</h2>
       <div className="reviews-page__wrapper">
-        <Review fullName="Имя" post="Должность">
-          Текст отзыва
+        <Review fullName="Станислав" post="JavaScript developer">
+          Данное веб-приложение избавило меня от необходимости поиска необходимой мне литературы.
+          Теперь ознакомление и чтение книг стало более доступным. В целом, работу сервиса могу
+          оценить на "Отлично".
         </Review>
-        <Review fullName="Имя" post="Должность">
-          Текст отзыва
+        <Review fullName="Никита" post="C# developer">
+          Веб-приложение - мне очень понравилось. Дизайн топ. Книги топ.
         </Review>
-        <Review fullName="Имя" post="Должность">
-          Текст отзыва
+        <Review fullName="Жан" post="Unity2d developer">
+          Удобный сайт, тех.поддержка быстро отвечает
         </Review>
       </div>
     </ShadowWrapper>

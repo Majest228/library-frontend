@@ -144,3 +144,31 @@ $shadow-gold: rgba(250, 184, 18, 0.1);
     opacity: 0;
   }
 }
+
+@media (max-width: 996px) {
+  .subscribe {
+    &__page {
+      margin: 80px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+@media (max-width: 410px) {
+  .subscribe {
+    &__card {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      margin: 15px 4.5px;
+      transition: 0.5s;
+      min-width: 300px;
+      box-shadow: 0 1px 2px $shadow-color, 0 2px 4px $shadow-color, 0 4px 8px $shadow-color,
+        0 8px 16px $shadow-color, 0 16px 32px $shadow-color, 0 32px 64px $shadow-color;
+      border-radius: 10px;
+      position: relative;
+    }
+  }
+}

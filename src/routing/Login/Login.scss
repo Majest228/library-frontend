@@ -95,3 +95,14 @@
     }
   }
 }
+
+@media (max-width: 996px) {
+  .login {
+    &__page {
+      justify-content: center;
+    }
+    &__image {
+      display: none;
+    }
+  }
+}

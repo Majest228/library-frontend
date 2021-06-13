@@ -19,3 +19,18 @@
   min-width: 400px;
   top: 30px;
 }
+
+@media (max-width: 659px) {
+  .author__search {
+    position: absolute;
+    min-width: 300px;
+    top: 30px;
+  }
+}
+@media (max-width: 430px) {
+  .author__search {
+    position: absolute;
+    min-width: 100px;
+    top: 30px;
+  }
+}

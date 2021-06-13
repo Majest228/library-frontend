@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Search } from '../Search';
-import { Button } from 'components/common/Button';
-import { LikeButton } from 'components/LikeButton';
+// import { Button } from 'components/common/Button';
+// import { LikeButton } from 'components/LikeButton';
 import { RouteButton } from 'components/common/RouteButton';
 import User from 'icons/User';
 import './Header.scss';
@@ -29,8 +29,15 @@ const Header = ({ user }) => {
           )}
         </div>
         <div className="header__buttons-adaptive">
-          <LikeButton className="header__favorites" liked secondary />
-          <Button variant="outlined">___</Button>
+          {user.auth ? (
+            <NavLink to="/account">
+              <User className="header__user" />
+            </NavLink>
+          ) : (
+            <RouteButton to="/login" variant="outlined">
+              Войти
+            </RouteButton>
+          )}
         </div>
       </div>
       <hr className="header__divider" />

@@ -152,7 +152,16 @@ $image-y-offset: 80px;
   .intro {
     &__container {
       display: block;
-      text-align: center;
+    }
+    &__image-wrapper {
+      display: none;
+    }
+    &__title {
+      font-size: 50px;
+      font-weight: 700;
+    }
+    &__description {
+      font-size: 30px;
     }
   }
 }

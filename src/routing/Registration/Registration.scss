@@ -64,3 +64,17 @@
     text-align: center;
   }
 }
+
+@media (max-width: 996px) {
+  .registration {
+    &__image {
+      display: none;
+    }
+    &__page {
+      margin: 50px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
