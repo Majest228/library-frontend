@@ -9,6 +9,7 @@ import { BOOKS_SIZE_ACCOUNT } from 'constants/search';
 import { getFavoritedBooks, getReadLaterBooks } from 'api';
 import { setPage, setTotal, setBooks, favoriteBook, resetStore } from 'redux/actions';
 import booksReducer from 'redux/reducers/books';
+import localForage from 'localforage';
 import './Account.scss';
 
 const Account = ({ user, resetStore }) => {
@@ -41,7 +42,10 @@ const Account = ({ user, resetStore }) => {
     dispatchFavorited(favoriteBook(id));
   }, []);
 
-  const exit = useCallback(() => resetStore(), [resetStore]);
+  const exit = useCallback(async () => {
+    resetStore();
+    await localForage.removeItem('token');
+  }, [resetStore]);
 
   useEffect(() => {
     getFavoritedBooks(BOOKS_SIZE_ACCOUNT, favorited.page).then(response => {

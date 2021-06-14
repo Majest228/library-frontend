@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Button } from 'components/common/Button';
 import { StarRating } from 'components/common/StarRating';
 import { noop } from 'utils';
@@ -6,7 +7,6 @@ import { getBookPdf } from 'api';
 import Premium from 'icons/Premium';
 import Free from 'icons/Free';
 import './BookView.scss';
-import { connect } from 'react-redux';
 
 const BookView = ({ book, subscribed = false, toggleFavorite = noop, toggleReadLater = noop }) => {
   const Icon = book.typeOfContent ? Premium : Free;
@@ -155,7 +155,7 @@ const BookView = ({ book, subscribed = false, toggleFavorite = noop, toggleReadL
 };
 
 const mapStateToProps = state => ({
-  subscribed: state.user.info !== null ? state.user.info.subscribe !== 0 : false,
+  subscribed: (state.user.info?.subscribe ?? 0) !== 0,
 });
 
 export default connect(mapStateToProps)(BookView);
