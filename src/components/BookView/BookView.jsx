@@ -110,7 +110,7 @@ const BookView = ({ book, subscribed = false, toggleFavorite = noop, toggleReadL
           >
             {book.readLater ? 'Не читать' : 'Читать позже'}
           </Button>
-          {book.pdfExists === 1 && subscribed && (
+          {book.pdfExists === 1 && (book.typeOfContent === 1 ? subscribed : true) && (
             <>
               <Button className="book__button" onClick={openPdf}>
                 Открыть
@@ -155,7 +155,7 @@ const BookView = ({ book, subscribed = false, toggleFavorite = noop, toggleReadL
 };
 
 const mapStateToProps = state => ({
-  subscribed: state.user.info.subscribe !== 0,
+  subscribed: state.user.info !== null ? state.user.info.subscribe !== 0 : false,
 });
 
 export default connect(mapStateToProps)(BookView);
