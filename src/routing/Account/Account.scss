@@ -52,3 +52,21 @@
     text-align: center;
   }
 }
+@media (max-width: 660px) {
+  .account {
+    &__user {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    &__button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .user {
+    &__subscribe {
+      justify-content: center;
+    }
+  }
+}
